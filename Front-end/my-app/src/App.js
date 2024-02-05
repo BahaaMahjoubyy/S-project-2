@@ -5,7 +5,7 @@ function App() {
   const [view, setView] = useState('');
 
 
-
+ 
 
 
   const switchView = (option) => {
