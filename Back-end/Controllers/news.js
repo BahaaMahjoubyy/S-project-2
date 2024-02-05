@@ -48,10 +48,26 @@ const deleteNews = (req, res) => {
       }
     });
   }
+  const searchNewsByTitle = (req, res) => {
+    const searchTerm = req.query.title;
+    if (!searchTerm) {
+        return res.status(400).send("Title parameter is missing");
+    }
+
+    news.searchByTitle(searchTerm, (err, result) => {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.status(200).json(result);
+        }
+    });
+};
+
   module.exports={
     getAllNews,
     getOneNews,
     createNews,
     deleteNews,
     updateNews,
+    searchNewsByTitle,
   }
