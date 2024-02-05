@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const PORT = 8080;
 const userRoutes = require("../Routes/users");
-
+const news=require('../Routes/news.js')
 
 
 
@@ -12,7 +12,7 @@ const userRoutes = require("../Routes/users");
 app.use(cors());
 app.use(express.json());
 app.use("/user", userRoutes)
-
+app.use("/news",news)
 
 
 
