@@ -54,10 +54,23 @@ const update=(newsId,newsData,callback)=>{
         }
     })
 }
+const searchByTitle = (searchTerm, callback) => {
+    const query = 'SELECT * FROM news WHERE title LIKE ?';
+    const searchValue = `%${searchTerm}%`; // To search for titles containing the searchTerm
+    connection.query(query, [searchValue], (err, result) => {
+        if (err) {
+            callback(err, null);
+        } else {
+            callback(null, result);
+        }
+    });
+};
+
 module.exports={
     getAll,
     getOne,
     create,
     remove,
-    update
+    update,
+    searchByTitle
 }
