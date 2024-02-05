@@ -8,19 +8,19 @@ body{
 
 /*Navbar*/
 .navbar {
-  background-color: #180393; /* Deep gray background */
-  color: #fff; /* White text */
+  background-color:transparent; /* Deep gray background */
   padding: 15px;
   display: flex;
   align-items: center;
   justify-content: flex-start; 
+  margin-top: 1%;
 
 }
 
 .navbar h2 {
   margin: 0;
   font-size: 18px; 
-  color: #ffffff; 
+  color: #000000; 
   margin-left: 50px;
 }
 
@@ -31,4 +31,11 @@ body{
 
 .navbar h2:hover {
   text-decoration: underline;
+}
+
+.App img {
+  width:70%;
+  height :900px;
+  margin-left: 13%;
+  margin-top: 0%;
 }
