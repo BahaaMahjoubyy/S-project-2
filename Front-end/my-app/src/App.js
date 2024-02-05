@@ -1,5 +1,6 @@
 import React ,{useState}from 'react'
-
+import News  from './components/News.jsx';
+import '../src/App.css'
 function App() {
 
   const [view, setView] = useState('Home');
@@ -29,7 +30,7 @@ function App() {
 
 
      
-      {/* {view === 'Home' && </>} */}
+      {view === 'CodesNews' && < News view={view}/> }
 
         
         
@@ -39,6 +40,6 @@ function App() {
     </div>
    
   );
-}
+};
 
 export default App;
