@@ -65,3 +65,13 @@ body{
   height: 50px;
   margin-left: 50%;
 }
+
+.chat-container{
+  position: relative;
+  background-color: rgb(1, 54, 36);
+}
+.chat-header p {
+  margin-top: 5%;
+  color: #000000;
+  margin-bottom: 3%;
+}
