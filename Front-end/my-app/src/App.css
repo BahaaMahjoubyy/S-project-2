@@ -5,19 +5,19 @@ body{
 
 /*Navbar*/
 .navbar {
-  background-color: #180393; /* Deep gray background */
-  color: #fff; /* White text */
-  padding: 15px;
+  background-color:transparent; /* Deep gray background */
+  /* padding: 5px; */
   display: flex;
   align-items: center;
   justify-content: flex-start; 
+  /* margin-top: 1%; */
 
 }
 
 .navbar h2 {
   margin: 0;
-  font-size: 18px; 
-  color: #ffffff; 
+  font-size: 19px; 
+  color: #000000; 
   margin-left: 50px;
 }
 
@@ -28,4 +28,38 @@ body{
 
 .navbar h2:hover {
   text-decoration: underline;
+}
+
+.Home img {
+  width:70%;
+  height :900px;
+  margin-left: 13%;
+  margin-top: 0%;
+}
+
+/* About.css */
+.about {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about img {
+  width: 40%;
+  height: auto;
+  margin-left: 5%;
+  margin-bottom: 15%;
+  margin-top: 3%;
+
+}
+
+.about .ab2 img {
+  width: 80%;
+  height: auto;
+  margin-top: 40%;
+}
+
+.navbar img {
+  width:9%;
+  height: 70px;
+  margin-left: 50%;
 }
