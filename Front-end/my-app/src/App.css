@@ -6,17 +6,17 @@ body{
 /*Navbar*/
 .navbar {
   background-color:transparent; /* Deep gray background */
-  padding: 15px;
+  /* padding: 5px; */
   display: flex;
   align-items: center;
   justify-content: flex-start; 
-  margin-top: 1%;
+  /* margin-top: 1%; */
 
 }
 
 .navbar h2 {
   margin: 0;
-  font-size: 18px; 
+  font-size: 19px; 
   color: #000000; 
   margin-left: 50px;
 }
@@ -56,4 +56,10 @@ body{
   width: 80%;
   height: auto;
   margin-top: 40%;
+}
+
+.navbar img {
+  width:13%;
+  height: 120px;
+  margin-left: 50%;
 }
