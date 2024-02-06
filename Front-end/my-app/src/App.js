@@ -40,10 +40,18 @@ function App() {
 
       <hr></hr>
 
+
       {view === 'Home' && (
         <>
           <div className='Home'>
             <img src={home} alt="Home" />
+            <div className="home-content">
+              <h2>Explore Exciting Features</h2>
+              <p>
+                Discover a wide range of courses, stay updated with the latest coding trends, and connect with other developers in our vibrant community.
+              </p>
+              <button onClick={() => changeView('CodesNews')}>Start Exploring</button>
+            </div>
           </div>
           <About ref={aboutRef} />
         </>

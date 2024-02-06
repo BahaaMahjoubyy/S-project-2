@@ -32,12 +32,59 @@ body{
   text-decoration: underline;
 }
 
+.Home {
+  position: relative;
+}
+
 .Home img {
-  width:70%;
-  height :900px;
+  width: 70%;
+  height: 900px;
   margin-left: 13%;
   margin-top: 0%;
 }
+
+/* Home.css */
+
+.home-content {
+  position: absolute;
+  top: 80%; /* Adjust this value to control the vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-top: 8%;
+}
+
+.home-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.home-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  margin-top: 4%;
+  color: #000000;
+}
+
+.home-content button {
+  background-color: #1aaf6c;
+  color: #000000;
+  padding: 20px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50%;
+}
+
+.home-content button:hover {
+  background-color: #b6f0b6;
+}
+
+
+
 
 /* About.css */
 .about {
@@ -50,14 +97,14 @@ body{
   height: auto;
   margin-left: 5%;
   margin-bottom: 15%;
-  margin-top: 3%;
+  margin-top: 16%;
 
 }
 
 .about .ab2 img {
   width: 80%;
   height: auto;
-  margin-top: 40%;
+  margin-top: 68%;
 }
 
 .navbar img {
