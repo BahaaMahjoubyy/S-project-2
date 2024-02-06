@@ -40,10 +40,8 @@ function App() {
         </>
       )}
 
-      {view === 'CodesNews' && <News view={view} />}
       {view === 'CodesNews' && < News view={view} />}
       {view === 'Login' && <Login changeView={changeView} setProfileData={setProfileData} />}
-
       {view === 'SignIn' && <SignIn changeView={changeView} />}
       {view === 'Profile' && <Profile userId={profileData} />}
 
