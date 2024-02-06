@@ -37,9 +37,9 @@ margin-top: 6%;
   }
   
   .social-icons a {
-    color: #000000;
+    color: #21c00f;
     margin-right: 15px;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
   
   .footer-bottom {
@@ -55,6 +55,7 @@ margin-top: 6%;
     text-align: center;
     margin: 0;
     padding: 1% 0; 
+    font-size: large;
   }
   
   
