@@ -128,4 +128,74 @@
     text-align: center; /* Center the title */
     margin-bottom: 20px; /* Add margin to separate the title from news content */
     color: #848282; /* Adjust the color as needed */
+
 }
+.news-containerr {
+  position: relative; /* Add relative positioning */
+}
+
+.detailed-view {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Use a semi-transparent background */
+  backdrop-filter: blur(5px); /* Add backdrop filter to blur the background */
+  border-radius: 10px;
+  z-index: 1000;
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+  
+}
+
+.news-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.detailed-view .close-button {
+  position: absolute;
+  right: 0px;
+  background-color: #f52727;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.detailed-view .detailed-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.detailed-view .detailed-details {
+  text-align: center;
+}
+
+.detailed-view .detailed-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.detailed-view .detailed-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  
+}
+.news-containerr.blur-background .news-card {
+  filter: blur(5px); /* Apply blur filter to all news cards except the selected one */
+}
+
+.news-containerr.blur-background .selected-card {
+  filter: none; /* Remove blur filter from the selected card */
+}
+}
+
