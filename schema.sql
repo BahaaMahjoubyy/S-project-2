@@ -33,6 +33,21 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
+-- Table `developer`.`posts`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `developer`.`posts` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(200) NOT NULL,
+  `content` TEXT NOT NULL,
+  `image` VARCHAR(700) NULL DEFAULT NULL,
+  `date` VARCHAR(15) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
 -- Table `developer`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `developer`.`user` (
