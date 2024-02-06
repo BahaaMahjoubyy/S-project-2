@@ -35,7 +35,7 @@ function App() {
         </>
       )}
 
-      {view === 'CodesNews' && <News view={view} />}
+      
         {view === 'CodesNews' && < News view={view} />}
         {view === 'Login' && <Login changeView={changeView} />}
         {view === 'SignIn' && <SignIn changeView={changeView} />}
