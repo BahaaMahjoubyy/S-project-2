@@ -3,6 +3,7 @@ import News from './components/News.jsx';
 import '../src/App.css'
 import Login from './components/Login.jsx';
 import SignIn from './components/SignIn.jsx';
+import Posts from './components/Posts.jsx';
 function App() {
 
   const [view, setView] = useState('Home');
@@ -27,7 +28,7 @@ function App() {
         {view === 'CodesNews' && < News view={view} />}
         {view === 'Login' && <Login changeView={changeView} />}
         {view === 'SignIn' && <SignIn changeView={changeView} />}
-
+        {view==='Postes'&&<Posts/>}
       </div>
 
     </div>
