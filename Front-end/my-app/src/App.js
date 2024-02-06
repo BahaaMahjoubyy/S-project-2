@@ -11,10 +11,6 @@ function App() {
     setView(newView);
   };
 
-
-
-
-
   return (
     <div className="App">
       <nav className='navbar'>
@@ -25,19 +21,12 @@ function App() {
         <h2 onClick={() => changeView('Chat')}>Chat</h2>
         <h2 className="Login" onClick={() => changeView('Login')}>🔻 Login</h2>
 
-
-
       </nav>
       <div>
-
-
-
 
         {view === 'CodesNews' && < News view={view} />}
         {view === 'Login' && <Login changeView={changeView} />}
         {view === 'SignIn' && <SignIn changeView={changeView} />}
-
-
 
       </div>
 
