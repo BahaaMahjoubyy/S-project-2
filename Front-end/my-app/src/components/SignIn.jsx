@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import axios from 'axios'; // Import Axios
 import "./Signin.css";
+import validation from './SinginValidation';
 
 const SignIn = (props) => {
-  const [userData, setUserData] = useState({ username: '', email: '', password: '' });
+  const [errors, seterrors] = useState({})
+  const [userData, setUserData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -11,28 +18,26 @@ const SignIn = (props) => {
 
   const handleSignIn = async (event) => {
     event.preventDefault();
-
+    seterrors(validation(userData))
     try {
-      const response = await fetch('http://localhost:8080/user/add', {
-        method: 'POST',
+      const response = await axios.post('http://localhost:8080/user/add', userData, {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`, // Include the token here
+          // remove the token from the autho header for signin
+          // 'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
-        body: JSON.stringify(userData),
       });
 
-      const data = await response.json();
+      const data = response.data;
 
-      if (response.ok) {
+      if (response.status === 200) {
         if (data.token) {
+          // If the sign-in is successful, save the token to localStorage
           localStorage.setItem('token', data.token);
         }
       } else {
-        // Handle error response
         console.error('Error during Sign In:', data.message);
       }
-
     } catch (error) {
       console.error('Error during Sign In:', error);
     }
