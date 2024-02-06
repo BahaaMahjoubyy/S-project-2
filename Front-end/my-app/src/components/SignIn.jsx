@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import "./Signin.css";
+import validation from './SinginValidation';
 
 const SignIn = (props) => {
-  const [userData, setUserData] = useState({ username: '', email: '', password: '' });
+  const [errors, setErrors] = useState({})
+  const [userData, setUserData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -11,28 +18,25 @@ const SignIn = (props) => {
 
   const handleSignIn = async (event) => {
     event.preventDefault();
-
+    setErrors(validation(userData))
     try {
-      const response = await fetch('http://localhost:8080/user/add', {
-        method: 'POST',
+      const response = await axios.post('http://localhost:8080/user/add', userData, {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`, // Include the token here
         },
-        body: JSON.stringify(userData),
       });
 
-      const data = await response.json();
+      const data = response.data;
 
-      if (response.ok) {
+      if (response.status === 200) {
         if (data.token) {
           localStorage.setItem('token', data.token);
+          // Change the view to 'Login' after successfully signing in
+          props.changeView('Login');
         }
       } else {
-        // Handle error response
         console.error('Error during Sign In:', data.message);
       }
-
     } catch (error) {
       console.error('Error during Sign In:', error);
     }
@@ -50,6 +54,7 @@ const SignIn = (props) => {
           value={userData.username}
           onChange={handleInputChange}
         />
+        <span>{errors.username && <span>{errors.username}</span>}</span>
       </label>
       <label>
         <p>Email</p>
@@ -61,6 +66,7 @@ const SignIn = (props) => {
           value={userData.email}
           onChange={handleInputChange}
         />
+        <span>{errors.email && <span>{errors.email}</span>}</span>
       </label>
       <label>
         <p>Password</p>
@@ -72,9 +78,10 @@ const SignIn = (props) => {
           value={userData.password}
           onChange={handleInputChange}
         />
+        <span>{errors.password && <span>{errors.password}</span>}</span>
       </label>
       <button type='submit' className='signin'>Sign In</button>
-      <button onClick={() => props.changeView('Login')} className='change-view-signin'>Have An Account? Log In</button>
+      <button className='change-view-signin'>Have An Account? Log In</button>
     </form>
   )
 }

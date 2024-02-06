@@ -8,7 +8,7 @@ module.exports = {
                   callback(err, result)
             })
       },
-      search: (data, callback) => {
+      search: (title, callback) => {
             const sql = "SELECT * FROM posts WHERE title=?"
             connection.query(sql, title, (err, result) => {
                   callback(err, result)
