@@ -3,6 +3,7 @@ import React from 'react';
 import ab from '../images/ab.png';
 import ab2 from '../images/ab2.png';
 
+console.log('hello')
 
 function About() {
   return (
