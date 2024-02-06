@@ -5,23 +5,24 @@ import axios from 'axios';
 import './News.css'; // Import the CSS file
 
 const News = () => {
-  // State to store the list of news
+ 
   const [newsList, setNewsList] = useState([]);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
-  // Function to fetch all news from the backend
+ 
   const fetchAllNews = async () => {
     try {
-      // Make a GET request to your backend endpoint for getting all news
+      
       const response = await axios.get('http://localhost:8080/news/getAll');
       console.log('Backend Response:', response.data);
 
-      // Check if the response data is an array
+      
       if (Array.isArray(response.data)) {
-        // Update the newsList state with the response data
+        
         setNewsList(response.data);
       } else {
-        // Handle unexpected response structure
+       
         setError('Unexpected response structure');
       }
     } catch (error) {
@@ -31,14 +32,55 @@ const News = () => {
     }
   };
 
+  // Function to fetch news by title from the backend
+  const fetchNewsByTitle = async () => {
+    try {
+      // Make a GET request to your backend endpoint for searching news by title
+      const response = await axios.get(`http://localhost:8080/news/search?title=${searchTerm}`);
+      console.log('Search Response:', response.data);
+
+      // Check if the response data is an array
+      if (Array.isArray(response.data)) {
+        // Update the newsList state with the search results
+        setNewsList(response.data);
+      } else {
+        // Handle unexpected response structure
+        setError('Unexpected response structure');
+      }
+    } catch (error) {
+      console.error('Error searching news:', error);
+      // Update the error state
+      setError('Error searching news');
+    }
+  };
+
   // useEffect hook to fetch news when the component mounts
   useEffect(() => {
     fetchAllNews();
   }, []); // Empty dependency array to fetch news only once when the component mounts
 
+  // Function to handle search term changes
+  const handleSearchTermChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  // Function to handle search button click
+  const handleSearchButtonClick = () => {
+    fetchNewsByTitle();
+  };
+
   return (
-    <div className="news-container">
-      <h2>All News:</h2>
+    <div className='news-containerr'>
+      <h2 className="news-title-heading">All News:</h2>
+      <div className="search-barr">
+        <input className='search-inputt'
+          type="text"
+          placeholder="Search by title"
+          value={searchTerm}
+          onChange={handleSearchTermChange}
+        />
+        <button className='search-buttonn' onClick={handleSearchButtonClick}>Search</button>
+      </div>
       {error ? (
         <p>{error}</p>
       ) : newsList.length > 0 ? (
