@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import About from './components/About.jsx';
 import News from './components/News.jsx';
 import '../src/App.css';
@@ -23,17 +23,19 @@ function App() {
         <h2 onClick={() => changeView('CodesNews')}>Codes News</h2>
         <h2 onClick={() => changeView('Postes')}>Postes</h2>
         <h2 onClick={() => changeView('Chat')}>Chat</h2>
-        <h2 onClick={() => changeView('About')}>About</h2> {/* Update view to 'About' */}
+        <h2 onClick={() => changeView('About')}>About</h2>
         <h2 className="Login" onClick={() => changeView('Login')}>🔻 Login</h2>
-
+        <img  src={logo} alt="logo"/>
       </nav>
 
       <hr></hr>
 
       {view === 'Home' && (
         <>
-          <img src={home} alt="Home" />
-          <About />
+          <div className='Home'>
+            <img src={home} alt="Home" />
+          </div>
+          <About ref={aboutRef} />
         </>
       )}
 
@@ -50,6 +52,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
