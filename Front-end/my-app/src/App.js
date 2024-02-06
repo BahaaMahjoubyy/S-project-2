@@ -1,26 +1,22 @@
 import React, { useState, useRef } from 'react';
-import About from './components/About.jsx'; 
+import About from './components/About.jsx';
 import News from './components/News.jsx';
 import '../src/App.css';
 import home from '../src/images/home.png';
 import Login from './components/Login.jsx';
 import SignIn from './components/SignIn.jsx';
-import logo from '../src/images/logo.png';
+import Profile from './components/Profile.jsx'
 import Footer from './components/Footer.jsx';
 
 function App() {
   const [view, setView] = useState('Home');
-  const aboutRef = useRef(null);
-
-  const changeView = (newView) => {
-    if (newView === 'About') {
-      // Scroll to the About section
-      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      setView(newView);
+  const [profileData, setProfileData] = useState(null);
+  const changeView = (newView, userId) => {
+    setView(newView);
+    if (newView === 'Profile') {
+      setProfileData(userId);
     }
   };
-
   return (
     <div className="App">
       <nav className='navbar'>
@@ -30,7 +26,7 @@ function App() {
         <h2 onClick={() => changeView('Chat')}>Chat</h2>
         <h2 onClick={() => changeView('About')}>About</h2>
         <h2 className="Login" onClick={() => changeView('Login')}>🔻 Login</h2>
-        <img  src={logo} alt="logo"/>
+        {/* <img src={logo} alt="logo" /> */}
       </nav>
 
       <hr></hr>
@@ -40,17 +36,22 @@ function App() {
           <div className='Home'>
             <img src={home} alt="Home" />
           </div>
-          <About ref={aboutRef} />
+          {/* <About ref={aboutRef} /> */}
         </>
       )}
 
+      {view === 'CodesNews' && <News view={view} />}
       {view === 'CodesNews' && < News view={view} />}
-      {view === 'Login' && <Login changeView={changeView} />}
-      {view === 'SignIn' && <SignIn changeView={changeView} />}
+      {view === 'Login' && <Login changeView={changeView} setProfileData={setProfileData} />}
 
-    <Footer/>
+      {view === 'SignIn' && <SignIn changeView={changeView} />}
+      {view === 'Profile' && <Profile userId={profileData} />}
+
+      <Footer />
 
     </div>
+
+
   );
 }
 
