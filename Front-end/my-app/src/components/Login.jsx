@@ -45,7 +45,7 @@ const Login = (props) => {
                         const profileData = await profileResponse.json();
                         console.log('Profile Data:', profileData);
                         setProfileData(profileData);
-                        changeView('Profile', profileData.userId);
+                        changeView('Profile', profileData.id);
                   }
             } catch (error) {
                   console.error('Error during Login:', error);

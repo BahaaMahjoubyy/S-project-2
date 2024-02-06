@@ -7,5 +7,7 @@ routes.delete('/DELETE/:id', controller.DELETE);
 routes.post('/add', controller.add);
 routes.post('/login', controller.login);
 routes.get('/:id', controller.getUserById);
-
+routes.get('/profile', controller.authenticateJWT, (req, res) => {
+      const userId = req.user.id;
+})
 module.exports = routes;
