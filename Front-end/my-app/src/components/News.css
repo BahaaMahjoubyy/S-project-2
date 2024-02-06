@@ -1,10 +1,11 @@
 /* News.css */
 
-.news-container {
-    max-width: 900px;
-    margin: 0 auto;
-  }
+.news-containerr {
+  max-width: auto;
+  margin: 0 auto;
+  background-image: url("https://i.pinimg.com/564x/31/78/2c/31782ce662501901d459aa624985743d.jpg");
   
+}
   .news-cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -14,12 +15,24 @@
     position: relative;
     border: 1px solid #ddd;
     border-radius: 13px;
-    margin: 30px;
-    padding: 20px;
+    margin: 40px;
+    padding: 40px;
     width: 320px;
     height: 400px; /* Increased card height */
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
+  }
+  
+  .news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Add blur effect to the background */
+    z-index: -1; /* Place the overlay behind the card content */
   }
   
   .news-card:hover {
