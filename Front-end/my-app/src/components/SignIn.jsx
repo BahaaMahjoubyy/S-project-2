@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
 import "./Signin.css";
 import validation from './SinginValidation';
 
 const SignIn = (props) => {
-  const [errors, seterrors] = useState({})
+  const [errors, setErrors] = useState({})
   const [userData, setUserData] = useState({
     username: '',
     email: '',
@@ -18,13 +18,11 @@ const SignIn = (props) => {
 
   const handleSignIn = async (event) => {
     event.preventDefault();
-    seterrors(validation(userData))
+    setErrors(validation(userData))
     try {
       const response = await axios.post('http://localhost:8080/user/add', userData, {
         headers: {
           'Content-Type': 'application/json',
-          // remove the token from the autho header for signin
-          // 'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
       });
 
@@ -32,7 +30,6 @@ const SignIn = (props) => {
 
       if (response.status === 200) {
         if (data.token) {
-          // If the sign-in is successful, save the token to localStorage
           localStorage.setItem('token', data.token);
         }
       } else {
@@ -55,6 +52,7 @@ const SignIn = (props) => {
           value={userData.username}
           onChange={handleInputChange}
         />
+        <span>{errors.username && <span>{errors.username}</span>}</span>
       </label>
       <label>
         <p>Email</p>
@@ -66,6 +64,7 @@ const SignIn = (props) => {
           value={userData.email}
           onChange={handleInputChange}
         />
+        <span>{errors.email && <span>{errors.email}</span>}</span>
       </label>
       <label>
         <p>Password</p>
@@ -77,6 +76,7 @@ const SignIn = (props) => {
           value={userData.password}
           onChange={handleInputChange}
         />
+        <span>{errors.password && <span>{errors.password}</span>}</span>
       </label>
       <button type='submit' className='signin'>Sign In</button>
       <button onClick={() => props.changeView('Login')} className='change-view-signin'>Have An Account? Log In</button>

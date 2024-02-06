@@ -5,24 +5,24 @@ import axios from 'axios';
 import './News.css'; // Import the CSS file
 
 const News = () => {
- 
+
   const [newsList, setNewsList] = useState([]);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 
- 
+
   const fetchAllNews = async () => {
     try {
-      
+
       const response = await axios.get('http://localhost:8080/news/getAll');
       console.log('Backend Response:', response.data);
 
-      
+
       if (Array.isArray(response.data)) {
-        
+
         setNewsList(response.data);
       } else {
-       
+
         setError('Unexpected response structure');
       }
     } catch (error) {
