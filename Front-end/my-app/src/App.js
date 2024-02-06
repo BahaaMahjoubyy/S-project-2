@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import About from './components/About.jsx'; 
+import About from './components/About.jsx';
 import News from './components/News.jsx';
 import '../src/App.css';
 import home from '../src/images/home.png';
-
 import Login from './components/Login.jsx';
 import SignIn from './components/SignIn.jsx';
+import Profile from './components/Profile.jsx'
 
 function App() {
   const [view, setView] = useState('Home');
-
-  const changeView = (newView) => {
+  const [profileData, setProfileData] = useState(null);
+  const changeView = (newView, userId) => {
     setView(newView);
+    if (newView === 'Profile') {
+      setProfileData(userId);
+    }
   };
-
   return (
     <div className="App">
       <nav className='navbar'>
@@ -36,13 +38,14 @@ function App() {
       )}
 
       {view === 'CodesNews' && <News view={view} />}
-        {view === 'CodesNews' && < News view={view} />}
-        {view === 'Login' && <Login changeView={changeView} />}
-        {view === 'SignIn' && <SignIn changeView={changeView} />}
+      {view === 'CodesNews' && < News view={view} />}
+      {view === 'Login' && <Login changeView={changeView} setProfileData={setProfileData} />}
 
-      </div>
+      {view === 'SignIn' && <SignIn changeView={changeView} />}
+      {view === 'Profile' && <Profile userId={profileData} />}
+    </div>
 
-    
+
   );
 }
 
