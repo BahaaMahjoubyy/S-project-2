@@ -65,22 +65,22 @@
     font-size: 1rem; /* Corrected font size */
     margin-top: 8px;
   }
-  .search-bar {
+  .search-barr {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
   }
   
-  .search-input {
+  .search-inputt {
     flex-grow: 1;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ddd;
+    border: 1px solid #f8f8f8;
     border-radius: 5px 0 0 5px;
     outline: none;
   }
   
-  .search-button {
+  .search-buttonn {
     padding: 10px 15px;
     font-size: 16px;
     background-color: #4caf50;
@@ -89,23 +89,24 @@
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    bottom: 0.80em;
   }
   
-  .search-button:hover {
+  .search-buttonn:hover {
     background-color: #45a049;
     border: 1px solid #45a049;
   }
   
   /* Add these styles for the search bar within news-container */
-  .news-container .search-bar {
+  .news-containerr .search-barr {
     margin-bottom: 10px; /* Adjusted margin for better spacing */
   }
   
-  .news-container .search-input {
+  .news-containerr .search-inputt {
     width: 70%; /* Adjusted width for better responsiveness */
   }
   
-  .news-container .search-button {
+  .news-containerr .search-buttonn {
     width: 30%; /* Adjusted width for better responsiveness */
   }
   .news-title-heading {
@@ -113,5 +114,5 @@
     font-weight: bold;
     text-align: center; /* Center the title */
     margin-bottom: 20px; /* Add margin to separate the title from news content */
-    color: #333; /* Adjust the color as needed */
+    color: #848282; /* Adjust the color as needed */
 }

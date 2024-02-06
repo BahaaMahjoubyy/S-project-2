@@ -70,16 +70,16 @@ const News = () => {
   };
 
   return (
-    <div className='news-container'>
+    <div className='news-containerr'>
       <h2 className="news-title-heading">All News:</h2>
-      <div className="search-bar">
-        <input className='search-input'
+      <div className="search-barr">
+        <input className='search-inputt'
           type="text"
           placeholder="Search by title"
           value={searchTerm}
           onChange={handleSearchTermChange}
         />
-        <button className='search-button' onClick={handleSearchButtonClick}>Search</button>
+        <button className='search-buttonn' onClick={handleSearchButtonClick}>Search</button>
       </div>
       {error ? (
         <p>{error}</p>
