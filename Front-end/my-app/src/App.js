@@ -30,7 +30,9 @@ function App() {
 
       {view === 'Home' && (
         <>
+        <div className='Home'>
           <img src={home} alt="Home" />
+          </div>
           <About />
         </>
       )}
