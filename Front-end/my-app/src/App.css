@@ -1,7 +1,6 @@
 body{
  
     margin: 0;
-    overflow: hidden; 
  background-color: #ffffff;
   
 }
@@ -38,4 +37,25 @@ body{
   height :900px;
   margin-left: 13%;
   margin-top: 0%;
+}
+
+/* About.css */
+.about {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about img {
+  width: 40%;
+  height: auto;
+  margin-left: 5%;
+  margin-bottom: 15%;
+  margin-top: 3%;
+
+}
+
+.about .ab2 img {
+  width: 80%;
+  height: auto;
+  margin-top: 40%;
 }
