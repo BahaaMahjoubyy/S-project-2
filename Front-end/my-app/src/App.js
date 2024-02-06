@@ -6,6 +6,7 @@ import home from '../src/images/home.png';
 import Login from './components/Login.jsx';
 import SignIn from './components/SignIn.jsx';
 import logo from '../src/images/logo.png';
+import Footer from './components/Footer.jsx';
 
 function App() {
   const [view, setView] = useState('Home');
@@ -46,6 +47,9 @@ function App() {
       {view === 'CodesNews' && < News view={view} />}
       {view === 'Login' && <Login changeView={changeView} />}
       {view === 'SignIn' && <SignIn changeView={changeView} />}
+
+    <Footer/>
+
     </div>
   );
 }
