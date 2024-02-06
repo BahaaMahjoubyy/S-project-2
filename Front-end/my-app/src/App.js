@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import About from './components/About.jsx'; 
 import News from './components/News.jsx';
@@ -9,8 +8,7 @@ import SignIn from './components/SignIn.jsx';
 import logo from '../src/images/logo.png';
 import Footer from './components/Footer.jsx';
 import Profile from './components/Profile.jsx'
-
-
+import Chat from './components/Chat.jsx';
 
 function App() {
   const [view, setView] = useState('Home');
@@ -54,7 +52,9 @@ function App() {
       {view === 'CodesNews' && < News view={view} />}
       {view === 'Login' && <Login changeView={changeView} />}
       {view === 'SignIn' && <SignIn changeView={changeView} />}
-      {view === 'Profile' && <Profile userId={profileData} />}
+      {view === 'Profile' && <Profile userId={profileData} changeView={changeView} />}
+      {view === 'Chat' && <Chat username="User1" />}
+
 
 
     <Footer/>
@@ -64,7 +64,6 @@ function App() {
 }
 
 export default App;
-
 
 
 
