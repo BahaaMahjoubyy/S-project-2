@@ -4,13 +4,15 @@ import axios from 'axios';
 import './News.css'; // Import the CSS file
 
 const News = () => {
-
   const [newsList, setNewsList] = useState([]);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedNews, setSelectedNews] = useState(null); // State to store the selected news item
   const [blurBackground, setBlurBackground] = useState(false); // State to toggle background blur
 
+  useEffect(() => {
+    fetchAllNews();
+  }, []);
 
   const fetchAllNews = async () => {
     try {
@@ -20,20 +22,6 @@ const News = () => {
       if (Array.isArray(response.data)) {
         setNewsList(response.data);
       } else {
-
-  const fetchAllNews = async () => {
-    try {
-
-      const response = await axios.get('http://localhost:8080/news/getAll');
-      console.log('Backend Response:', response.data);
-
-
-      if (Array.isArray(response.data)) {
-
-        setNewsList(response.data);
-      } else {
-
-
         setError('Unexpected response structure');
       }
     } catch (error) {
@@ -41,10 +29,6 @@ const News = () => {
       setError('Error fetching news');
     }
   };
-
-  useEffect(() => {
-    fetchAllNews();
-  }, []);
 
   const handleSearchTermChange = (event) => {
     setSearchTerm(event.target.value);
