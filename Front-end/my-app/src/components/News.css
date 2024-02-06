@@ -1,133 +1,131 @@
 /* News.css */
 
-.news-container {
-  max-width: 900px;
+.news-containerr {
+  max-width: auto;
   margin: 0 auto;
+  background-image: url("https://i.pinimg.com/564x/31/78/2c/31782ce662501901d459aa624985743d.jpg");
+  
 }
-
-.news-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.news-card {
-  position: relative;
-  border: 1px solid #ddd;
-  border-radius: 13px;
-  margin: 30px;
-  padding: 20px;
-  width: 320px;
-  height: 400px;
-  /* Increased card height */
-  transition: transform 0.3s ease-in-out;
-  overflow: hidden;
-}
-
-.news-card:hover {
-  transform: scale(1.05);
-}
-
-.news-image {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.news-card:hover .news-image {
-  transform: scale(1.2);
-}
-
-.news-details {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 15px;
-  /* Increased padding for more space */
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-bottom-left-radius: 12px;
-  /* Rounded corners for the details bar */
-  border-bottom-right-radius: 12px;
-}
-
-.news-card:hover .news-details {
-  opacity: 1;
-}
-
-.news-title {
-  font-size: 1.4rem;
-  /* Increased font size for better visibility */
-  font-weight: bold;
-  margin-bottom: 8px;
-  /* Increased margin for better spacing */
-}
-
-.news-description {
-  font-size: 1rem;
-  /* Corrected font size */
-  margin-top: 8px;
-}
-
-.search-barr {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.search-inputt {
-  flex-grow: 1;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #f8f8f8;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-}
-
-.search-buttonn {
-  padding: 10px 15px;
-  font-size: 16px;
-  background-color: #4caf50;
-  color: #fff;
-  border: 1px solid #4caf50;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  bottom: 0.80em;
-}
-
-.search-buttonn:hover {
-  background-color: #45a049;
-  border: 1px solid #45a049;
-}
-
-/* Add these styles for the search bar within news-container */
-.news-containerr .search-barr {
-  margin-bottom: 10px;
-  /* Adjusted margin for better spacing */
-}
-
-.news-containerr .search-inputt {
-  width: 70%;
-  /* Adjusted width for better responsiveness */
-}
-
-.news-containerr .search-buttonn {
-  width: 30%;
-  /* Adjusted width for better responsiveness */
-}
-
-.news-title-heading {
-  font-size: 2rem;
-  /* Adjust the font size as needed */
-  font-weight: bold;
-  text-align: center;
-  /* Center the title */
-  margin-bottom: 20px;
-  /* Add margin to separate the title from news content */
-  color: #848282;
-  /* Adjust the color as needed */
+  .news-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .news-card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 13px;
+    margin: 40px;
+    padding: 40px;
+    width: 320px;
+    height: 400px; /* Increased card height */
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Add blur effect to the background */
+    z-index: -1; /* Place the overlay behind the card content */
+  }
+  
+  .news-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .news-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .news-card:hover .news-image {
+    transform: scale(1.2);
+  }
+  
+  .news-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px; /* Increased padding for more space */
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-bottom-left-radius: 12px; /* Rounded corners for the details bar */
+    border-bottom-right-radius: 12px;
+  }
+  
+  .news-card:hover .news-details {
+    opacity: 1;
+  }
+  
+  .news-title {
+    font-size: 1.4rem; /* Increased font size for better visibility */
+    font-weight: bold;
+    margin-bottom: 8px; /* Increased margin for better spacing */
+  }
+  
+  .news-description {
+    font-size: 1rem; /* Corrected font size */
+    margin-top: 8px;
+  }
+  .search-barr {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-inputt {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #f8f8f8;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+  }
+  
+  .search-buttonn {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: 1px solid #4caf50;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    bottom: 0.80em;
+  }
+  
+  .search-buttonn:hover {
+    background-color: #45a049;
+    border: 1px solid #45a049;
+  }
+  
+  /* Add these styles for the search bar within news-container */
+  .news-containerr .search-barr {
+    margin-bottom: 10px; /* Adjusted margin for better spacing */
+  }
+  
+  .news-containerr .search-inputt {
+    width: 70%; /* Adjusted width for better responsiveness */
+  }
+  
+  .news-containerr .search-buttonn {
+    width: 30%; /* Adjusted width for better responsiveness */
+  }
+  .news-title-heading {
+    font-size: 2rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Add margin to separate the title from news content */
+    color: #848282; /* Adjust the color as needed */
 }
