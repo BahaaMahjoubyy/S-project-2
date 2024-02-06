@@ -6,6 +6,7 @@ import home from '../src/images/home.png';
 import Login from './components/Login.jsx';
 import SignIn from './components/SignIn.jsx';
 import Profile from './components/Profile.jsx'
+import Footer from './components/Footer.jsx';
 
 function App() {
   const [view, setView] = useState('Home');
@@ -25,7 +26,7 @@ function App() {
         <h2 onClick={() => changeView('Chat')}>Chat</h2>
         <h2 onClick={() => changeView('About')}>About</h2>
         <h2 className="Login" onClick={() => changeView('Login')}>🔻 Login</h2>
-        <img  src={logo} alt="logo"/>
+        {/* <img src={logo} alt="logo" /> */}
       </nav>
 
       <hr></hr>
@@ -35,7 +36,7 @@ function App() {
           <div className='Home'>
             <img src={home} alt="Home" />
           </div>
-          <About ref={aboutRef} />
+          {/* <About ref={aboutRef} /> */}
         </>
       )}
 
@@ -45,6 +46,9 @@ function App() {
 
       {view === 'SignIn' && <SignIn changeView={changeView} />}
       {view === 'Profile' && <Profile userId={profileData} />}
+
+      <Footer />
+
     </div>
 
 
