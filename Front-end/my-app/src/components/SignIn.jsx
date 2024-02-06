@@ -31,6 +31,8 @@ const SignIn = (props) => {
       if (response.status === 200) {
         if (data.token) {
           localStorage.setItem('token', data.token);
+          // Change the view to 'Login' after successfully signing in
+          props.changeView('Login');
         }
       } else {
         console.error('Error during Sign In:', data.message);
@@ -79,7 +81,7 @@ const SignIn = (props) => {
         <span>{errors.password && <span>{errors.password}</span>}</span>
       </label>
       <button type='submit' className='signin'>Sign In</button>
-      <button onClick={() => props.changeView('Login')} className='change-view-signin'>Have An Account? Log In</button>
+      <button className='change-view-signin'>Have An Account? Log In</button>
     </form>
   )
 }
