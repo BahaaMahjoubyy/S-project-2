@@ -3,8 +3,10 @@
 .news-containerr {
   max-width: auto;
   margin: 0 auto;
-  background-image: url("https://i.pinimg.com/564x/31/78/2c/31782ce662501901d459aa624985743d.jpg");
-  
+  background-image: url("https://i.pinimg.com/564x/9b/6f/ea/9b6fea6e9653557c042da63510fa01fa.jpg");
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-attachment: fixed;
 }
   .news-cards-container {
     display: flex;
