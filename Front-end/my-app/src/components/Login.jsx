@@ -16,6 +16,7 @@ const Login = (props) => {
 
       const handleLogin = async (event) => {
             event.preventDefault();
+            console.log('Log In button clicked');
 
             // Call the validation function and set the errors
             setErrors(Validation(loginData));
@@ -76,7 +77,7 @@ const Login = (props) => {
                         />
                         <span>{errors.password && <span>{errors.password}</span>}</span>
                   </label>
-                  <button type='submit' className='login-button'>
+                  <button type='submit' className='login-button' onClick={handleLogin}>
                         Log In
                   </button>
                   <button onClick={() => changeView('SignIn')} className='change-view-login'>
