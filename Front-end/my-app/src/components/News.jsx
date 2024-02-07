@@ -69,7 +69,7 @@ const News = () => {
 
   return (
     <div className={`news-containerr ${blurBackground ? 'blur-background' : ''}`}>
-      <h2 className="news-title-heading">All News:</h2>
+      <h2 className="news-title-heading"> News:</h2>
       <div className="search-barr">
         <input
           className='search-inputt'
