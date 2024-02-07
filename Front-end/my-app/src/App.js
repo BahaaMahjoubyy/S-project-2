@@ -7,6 +7,7 @@ import Login from './components/Login.jsx';
 import SignIn from './components/SignIn.jsx';
 import logo from '../src/images/logo.png';
 import Footer from './components/Footer.jsx';
+import Posts from './components/Posts.jsx';
 import Profile from './components/Profile.jsx'
 import CommunityHighlight from './components/CommunityHighlight';
 import { ChatEngine } from 'react-chat-engine';
@@ -104,6 +105,7 @@ function App() {
       {view === 'CodesNews' && < News view={view} />}
       {view === 'Login' && <Login changeView={changeView} />}
       {view === 'SignIn' && <SignIn changeView={changeView} />}
+      {view === 'Postes' && <Posts changeView={changeView} />}
       {view === 'Profile' && <Profile userId={profileData} changeView={changeView} />}
       {view === 'Chat' &&  <ChatEngine
       height="100vh"
