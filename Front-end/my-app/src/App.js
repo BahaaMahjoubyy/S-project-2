@@ -110,7 +110,7 @@ function App() {
       {view === 'Chat' &&  <ChatEngine
       height="100vh"
       projectID="98d2c3a2-6a77-4ce0-98cb-d77186b67640"
-      userName="iyes"
+      userName="javascriptmastery"
       userSecret="123123"
       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}

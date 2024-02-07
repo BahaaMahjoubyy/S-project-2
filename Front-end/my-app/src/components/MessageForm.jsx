@@ -1,22 +1,15 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { SendOutlined, PictureOutlined } from '@ant-design/icons';
 import { sendMessage, isTyping } from 'react-chat-engine';
 
 const MessageForm = (props) => {
   const [value, setValue] = useState('');
   const { chatId, creds } = props;
-  const timeoutRef = useRef(null);
 
   const handleChange = (event) => {
     setValue(event.target.value);
 
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    timeoutRef.current = setTimeout(() => {
-      isTyping(props, chatId);
-    }, 1000); // Adjust the debounce delay as needed
+    isTyping(props, chatId);
   };
 
   const handleSubmit = (event) => {
