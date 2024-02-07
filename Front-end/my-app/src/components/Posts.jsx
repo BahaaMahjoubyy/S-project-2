@@ -70,21 +70,22 @@ function Posts() {
 
   return (
     <div className="posts-container">
-        {posts.map((post)=>(
-<div className="app">
-  <header>
-    <a href="">
-      <img src={post.image} alt="Earth News" />
-    </a>
-  </header>
-
-  <main>
-    <h1><br/>{post.title}</h1>
-    <p>{post.content}</p>
-    <a href="">Read full article</a>
-  </main>
-</div>
-   ))}
+      {posts.map((post) => (
+        <div key={post.id} className="post">
+          <div className="app">
+            <header>
+              <a href="#">
+              </a>
+            </header>
+            <main>
+              <h1>{post.title}</h1>
+              <p>{post.content}</p>
+              <img src={post.image} alt="Post Image" />
+              
+            </main>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
