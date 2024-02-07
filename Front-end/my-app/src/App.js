@@ -8,16 +8,21 @@ import SignIn from './components/SignIn.jsx';
 import logo from '../src/images/logo.png';
 import Footer from './components/Footer.jsx';
 import Posts from './components/Posts.jsx';
+import Profile from './components/Profile.jsx'
+import Chat from './components/Chat.jsx';
 
 function App() {
   const [view, setView] = useState('Home');
   const aboutRef = useRef(null);
-
-  const changeView = (newView) => {
+  const [profileData, setProfileData] = useState(null);
+ 
+  const changeView = (newView ,userId) => {
     if (newView === 'About') {
       // Scroll to the About section
       aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-    } else {
+    }  else if (newView === 'Profile') {
+      setProfileData(userId);
+    }else {
       setView(newView);
     }
   };
@@ -36,10 +41,18 @@ function App() {
 
       <hr></hr>
 
+
       {view === 'Home' && (
         <>
           <div className='Home'>
             <img src={home} alt="Home" />
+            <div className="home-content">
+              <h2>Explore Exciting Features</h2>
+              <p>
+                Discover a wide range of courses, stay updated with the latest coding trends, and connect with other developers in our vibrant community.
+              </p>
+              <button onClick={() => changeView('CodesNews')}>Start Exploring</button>
+            </div>
           </div>
           <About ref={aboutRef} />
         </>
@@ -49,6 +62,11 @@ function App() {
       {view === 'Login' && <Login changeView={changeView} />}
       {view === 'SignIn' && <SignIn changeView={changeView} />}
       {view === 'Postes' && <Posts changeView={changeView} />}
+      {view === 'Profile' && <Profile userId={profileData} changeView={changeView} />}
+      {view === 'Chat' && <Chat username="User1" />}
+
+
+
     <Footer/>
 
     </div>
@@ -56,7 +74,6 @@ function App() {
 }
 
 export default App;
-
 
 
 

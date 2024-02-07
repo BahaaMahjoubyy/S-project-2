@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import './Login.css';
-import Validation from "./LoginValidation.js"
+import Validation from './LoginValidation';
 
 const Login = (props) => {
       const [loginData, setLoginData] = useState({ email: '', password: '' });
       const [errors, setErrors] = useState({});
       const [isLoggedIn, setLoggedIn] = useState(false);
+
+      // Destructure setProfileData and changeView from props
+      const { setProfileData, changeView } = props;
+
       const handleInput = (e) => {
-            setLoginData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-      }
+            setLoginData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+      };
 
       const handleLogin = async (event) => {
             event.preventDefault();
@@ -29,18 +33,24 @@ const Login = (props) => {
 
                   if (data.token) {
                         localStorage.setItem('token', data.token);
-                        setLoggedIn(true); // Update the login status
-                  }
+                        setLoggedIn(true);
 
+                        // Fetch and set user profile data here
+                        const profileResponse = await fetch('http://localhost:8080/user/profile', {
+                              method: 'GET',
+                              headers: {
+                                    'Authorization': data.token,
+                              },
+                        });
+                        const profileData = await profileResponse.json();
+                        console.log('Profile Data:', profileData);
+                        setProfileData(profileData);
+                        changeView('Profile', profileData.userId);
+                  }
             } catch (error) {
                   console.error('Error during Login:', error);
             }
       };
-
-      // Render Home component if logged in
-      if (isLoggedIn) {
-            return props.changeView('CodesNews')
-      }
 
       return (
             <form className='big-div' onSubmit={handleLogin}>
@@ -66,10 +76,14 @@ const Login = (props) => {
                         />
                         <span>{errors.password && <span>{errors.password}</span>}</span>
                   </label>
-                  <button type='submit' className='login-button'>Log In</button>
-                  <button onClick={() => props.changeView('SignIn')} className='change-view-login'>Don't Have An Account? Sign In Here</button>
+                  <button type='submit' className='login-button'>
+                        Log In
+                  </button>
+                  <button onClick={() => changeView('SignIn')} className='change-view-login'>
+                        Don't Have An Account? Sign In Here
+                  </button>
             </form>
-      )
-}
+      );
+};
 
 export default Login;

@@ -5,8 +5,24 @@ const PORT = 8080;
 const userRoutes = require("../Routes/users");
 const news=require('../Routes/news.js')
 const posts=require('../Routes/posts.js')
+const http = require('http');
+const socketIo = require('socket.io');
 
+const server = http.createServer(app);
+const io = socketIo(server);
 
+io.on('connection', (socket) => {
+  console.log('a user connected');
+
+  // Listen for chat messages
+  socket.on('chat message', (message) => {
+    io.emit('chat message', message);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
 
 
 
