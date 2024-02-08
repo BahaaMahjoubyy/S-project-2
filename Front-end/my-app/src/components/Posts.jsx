@@ -34,31 +34,54 @@ function Posts() {
     setFormData({ ...formData, image: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!formData.title.trim()) {
-      console.error('Title field is required.');
-      return;
-    }
+  if (!formData.title.trim()) { 
+    console.error('Title field is required.');
+    return;
+  }
+
+  if (!formData.image) {
+    console.error('Image is required.');
+    return;
+  }
+
+  try {
+    const formDataCloudinary = new FormData();
+    formDataCloudinary.append('file', formData.image);
+    formDataCloudinary.append('upload_preset', 'lzoc60oh');
+
+    const responseCloudinary = await axios.post(
+      'https://api.cloudinary.com/v1_1/db2yjlbsw/image/upload',
+      formDataCloudinary,
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+    );
+
+    const imageUrl = responseCloudinary.data.secure_url;
 
     const postData = {
       title: formData.title,
       content: formData.content,
-      image: formData.image
+      image: imageUrl
     };
 
-    axios.post('http://localhost:8080/posts/add', postData)
-      .then(response => {
-        console.log('Post added successfully:', response.data);
-        setFormData({ title: '', content: '', image: null });
-        fetchPosts();
-        setShowCreateForm(false);
-      })
-      .catch(error => {
-        console.error('Error adding post:', error);
-      });
-  };
+    const response = await axios.post('http://localhost:8080/posts/add', postData);
+
+    console.log('Post added successfully:', response.data);
+    setFormData({ title: '', content: '', image: null });
+    fetchPosts();
+    setShowCreateForm(false);
+  } catch (error) {
+    console.error('Error adding post:', error);
+  }
+};
+
+  
 
   const handleDelete = (postId) => {
     axios.delete(`http://localhost:8080/posts/delete/${postId}`)
