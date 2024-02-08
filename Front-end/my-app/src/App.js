@@ -7,9 +7,13 @@ import Login from './components/Login.jsx';
 import SignIn from './components/SignIn.jsx';
 import logo from '../src/images/logo.png';
 import Footer from './components/Footer.jsx';
+import Posts from './components/Posts.jsx';
 import Profile from './components/Profile.jsx'
-import Chat from './components/Chat.jsx';
 import CommunityHighlight from './components/CommunityHighlight';
+import { ChatEngine } from 'react-chat-engine';
+import ChatFeed from './components/ChatFeed.jsx';
+import './css/chat.css'
+
 
 function App() {
   const [view, setView] = useState('Home');
@@ -101,8 +105,16 @@ function App() {
       {view === 'CodesNews' && < News view={view} />}
       {view === 'Login' && <Login changeView={changeView} />}
       {view === 'SignIn' && <SignIn changeView={changeView} />}
+      {view === 'Postes' && <Posts changeView={changeView} />}
       {view === 'Profile' && <Profile userId={profileData} changeView={changeView} />}
-      {view === 'Chat' && <Chat username="User1" />}
+      {view === 'Chat' &&  <ChatEngine
+      height="100vh"
+      projectID="98d2c3a2-6a77-4ce0-98cb-d77186b67640"
+      userName="javascriptmastery"
+      userSecret="123123"
+      renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+      onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
+    /> }
 
 
 

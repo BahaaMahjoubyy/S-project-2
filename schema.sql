@@ -37,10 +37,9 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `developer`.`posts` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(200) NOT NULL,
+  `title` VARCHAR(100) NOT NULL,
   `content` TEXT NOT NULL,
-  `image` VARCHAR(700) NULL DEFAULT NULL,
-  `date` VARCHAR(15) NULL DEFAULT NULL,
+  `image` VARCHAR(4000) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
