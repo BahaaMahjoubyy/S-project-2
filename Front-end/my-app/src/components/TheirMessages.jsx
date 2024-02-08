@@ -1,5 +1,3 @@
-import React from 'react'
-
 const TheirMessage = ({ lastMessage, message }) => {
     const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
   
@@ -21,7 +19,7 @@ const TheirMessage = ({ lastMessage, message }) => {
             />
           )
           : (
-            <div className="message" style={{ float: 'left', backgroundColor: '#CABCDC', marginLeft: isFirstMessageByUser ? '4px' : '48px' }}>
+            <div className="message" style={{ float: 'left', backgroundColor: '#05b57a ', marginLeft: isFirstMessageByUser ? '4px' : '48px' }}>
               {message.text}
             </div>
           )}
