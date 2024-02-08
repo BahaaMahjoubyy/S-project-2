@@ -17,7 +17,7 @@ const Login = (props) => {
 
             // Additional actions to perform after isLoggedIn changes
             if (isLoggedIn) {
-                  changeView('Profile');
+                  changeView('Home');
             }
       }, [isLoggedIn]);
 
