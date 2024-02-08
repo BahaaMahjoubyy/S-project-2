@@ -11,6 +11,9 @@ const socketIo = require('socket.io');
 const server = http.createServer(app);
 const io = socketIo(server);
 
+app.use(cors())
+app.use(express.json())
+
 io.on('connection', (socket) => {
   console.log('a user connected');
 
