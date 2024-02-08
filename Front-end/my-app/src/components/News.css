@@ -3,10 +3,23 @@
 .news-containerr {
   max-width: auto;
   margin: 0 auto;
-  background-image: url("https://i.pinimg.com/564x/9b/6f/ea/9b6fea6e9653557c042da63510fa01fa.jpg");
-  background-size: cover; /* Ensure the background image covers the entire container */
-  background-repeat: no-repeat; /* Prevent the background image from repeating */
-  background-attachment: fixed;
+
+  background: linear-gradient(115deg, #000000 0%, #018752 50%, #e9eae9 100%);
+  background-size: 200% 200%;
+  animation: gradientAnimation 8s ease infinite;
+
+  
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
   .news-cards-container {
     display: flex;
@@ -161,7 +174,7 @@
 .detailed-view .close-button {
   position: absolute;
   right: 0px;
-  background-color: #f52727;
+  background-color: #e86a6a;
   border: none;
   cursor: pointer;
   font-size: 16px;

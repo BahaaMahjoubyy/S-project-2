@@ -67,6 +67,18 @@ const News = () => {
     }
   };
 
+  // Function to delete a news item
+  const handleDeleteNews = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8080/news/delete/${id}`);
+      // After successful deletion, refresh the news list
+      fetchAllNews();
+    } catch (error) {
+      console.error('Error deleting news:', error);
+      setError('Error deleting news');
+    }
+  };
+
   return (
     <div className={`news-containerr ${blurBackground ? 'blur-background' : ''}`}>
       <h2 className="news-title-heading"> News:</h2>
@@ -89,8 +101,9 @@ const News = () => {
               {news.image && <img src={news.image} alt={news.title} className="news-image" />}
               <div className="news-details">
                 <p className="news-title">{news.title}</p>
-                <p className="news-description">{news.description}</p>
+                {/* <p className="news-description">{news.description}</p> */}
                 {/* Add more fields as needed */}
+                <button className="delete-button" onClick={() => handleDeleteNews(news.id)}>Delete 🚮</button>
               </div>
             </div>
           ))}
@@ -108,11 +121,11 @@ const News = () => {
             <p className="detailed-description">{selectedNews.description}</p>
             {/* Add more fields as needed */}
           </div>
-          <button className="close-button" onClick={handleCloseDetailedView}>Close</button>
+          <button className="close-button" onClick={handleCloseDetailedView}>Close 🚫</button>
         </div>
       )}
     </div>
   );
 };
     
-export default News  ;
+export default News;
