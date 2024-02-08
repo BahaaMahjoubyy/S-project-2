@@ -2,24 +2,28 @@ import React, { useState, useEffect } from 'react';
 import './Login.css';
 import Validation from './LoginValidation';
 import Profile from './Profile.jsx'; // Import the Profile component
+import axios from 'axios';
 
 const Login = (props) => {
       const [loginData, setLoginData] = useState({ email: '', password: '' });
       const [errors, setErrors] = useState({});
       const [isLoggedIn, setLoggedIn] = useState(false);
-
-      // Destructure setProfileData and changeView from props
+      const [userData, setUserData] = useState([]); // Initialize userData as null
       const { changeView } = props;
 
+      //
       useEffect(() => {
             // This will run whenever isLoggedIn changes
             console.log('isLoggedIn:', isLoggedIn);
-
+          
             // Additional actions to perform after isLoggedIn changes
-            if (isLoggedIn) {
-                  changeView('Home');
+            if (isLoggedIn && loginData.email) {
+              // Fetch user data after login
+              fetchUserData(loginData.email);
+              changeView('Home');
             }
-      }, [isLoggedIn]);
+          }, [isLoggedIn, loginData.email]); // Include loginData.email in the dependency array
+          
 
       const handleInput = (e) => {
             setLoginData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -28,19 +32,18 @@ const Login = (props) => {
       const handleLogin = async (event) => {
             event.preventDefault();
             console.log('Log In button clicked');
-
-            // Call the validation function and set the errors
+      
             setErrors(Validation(loginData));
-
+      
             try {
-                  const response = await fetch('http://localhost:8080/user/login', {
-                        method: 'POST',
+                  const response = await axios.post('http://localhost:8080/user/login', loginData, {
                         headers: {
                               'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify(loginData),
                   });
-                  const data = await response.json();
+      
+                  const data = response.data;
+      
                   if (data.token) {
                         localStorage.setItem('token', data.token);
                         console.log('Token:', data.token);
@@ -50,14 +53,35 @@ const Login = (props) => {
                   console.error('Error during Login:', error);
             }
       };
+      const fetchUserData = async (email) => {
+            console.log('Fetching user data for email:', email); // Debug log
+            try {
+                  const response = await axios.get(`http://localhost:8080/user/${email}`, {
+                        headers: {
+                              'Content-Type': 'application/json',
+                              'Authorization': localStorage.getItem('token'), // Include the token in the headers
+                        },
+                  });
+      
+                  const userData = response.data;
+                  setUserData(userData);
+                  console.log('userData:', userData);
+                  localStorage.setItem("user",JSON.stringify(userData));
 
+                 
+            } catch (error) {
+                  console.error('Error fetching user data:', error);
+            }
+      };
+      console.log('userData:', userData);
       // Render the Profile component and pass isLoggedIn as a prop
+      console.log('isLoggedIn:', isLoggedIn);
       return (
             <div>
-              {isLoggedIn ? (
-                <Profile isLoggedIn={isLoggedIn} />
-              ) : (
-                <form className='big-div' onSubmit={handleLogin}>
+                  {isLoggedIn ? (
+                        <Profile isLoggedIn={isLoggedIn} userData={userData} />
+                  ) : (
+                        <form className='big-div' onSubmit={handleLogin}>
                               <label>
                                     <p>Email</p>
                                     <input

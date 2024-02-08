@@ -27,10 +27,14 @@ module.exports = {
                   if (err) {
                         callback(err, null);
                   } else {
-                        // Assuming the first user in the result is the one we want
-                        const userId = result.length > 0 ? result[0].id : null;
-                        const token = userId ? generateToken(userId) : null;
-                        callback(null, { userId, token });
+                        if (result.length > 0) {
+                              const user = result[0];
+                              const userId = user.id;
+                              const token = generateToken(userId);
+                              callback(null, { userId, token, user });
+                        } else {
+                              callback(null, { userId: null, token: null, user: null });
+                        }
                   }
             });
       },
@@ -42,10 +46,18 @@ module.exports = {
             });
       },
 
-      getUserById: (id, callback) => {
-            const sql = "SELECT * FROM user WHERE id=?";
-            connection.query(sql, [id], (err, result) => {
+      getUserByemail: (email, callback) => {
+            const sql = "SELECT * FROM user WHERE email=?";
+            connection.query(sql, [email], (err, result) => {
+              callback(err, result);
+            });
+          },
+          
+      getAllUsers: (callback) => {
+            const sql = "SELECT * FROM user";
+            connection.query(sql, (err, result) => {
                   callback(err, result);
             });
       },
+
 };

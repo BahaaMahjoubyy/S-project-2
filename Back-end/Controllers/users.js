@@ -52,27 +52,37 @@ module.exports = {
         res.status(500).send(err);
       } else {
         if (result.userId) {
-          const token = generateToken(result.userId)
-          res.json({ userId: result.userId, token })
+          const token = generateToken(result.userId);
+          res.json({ userId: result.userId, token, user: result.user });
         } else {
           res.status(401).json({ message: 'Invalid credentials' });
         }
       }
-    })
+    });
   },
 
-  getUserById: (req, res) => {
-    const userId = req.params.id;
 
-    model.getUserById(userId, (err, result) => {
+  getUserByemail: (req, res) => {
+    const email = req.params.email; // Assuming you're getting email from the request parameters
+    model.getUserByemail(email, (err, result) => {
       if (err) {
-        res.status(500).send(err)
+        res.status(500).send(err);
       } else {
         if (result.length === 0) {
           res.status(404).json({ message: "User not found" });
         } else {
-          res.json(result[0])
+          res.json(result[0]);
         }
+      }
+    });
+  },
+  
+  getAllUsers: (req, res) => {
+    model.getAllUsers((err, result) => {
+      if (err) {
+        res.status(500).json({ error: "Internal Server Error" });
+      } else {
+        res.status(200).json(result);
       }
     });
   },
