@@ -5,7 +5,13 @@ const PORT = 8080;
 const userRoutes = require("../Routes/users");
 const news=require('../Routes/news.js')
 const posts=require('../Routes/posts.js')
+
 const chat = require('../Routes/chat.js')
+
+
+app.use(cors())
+app.use(express.json())
+
 
 
 
