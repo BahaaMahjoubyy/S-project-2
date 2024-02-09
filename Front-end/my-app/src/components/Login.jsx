@@ -15,13 +15,14 @@ const Login = (props) => {
       useEffect(() => {
             // This will run whenever isLoggedIn changes
             console.log('isLoggedIn-from-login', isLoggedIn);
-            const storedIsLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
-            setLoggedIn(storedIsLoggedIn || false); // Set to false if stored value is null or undefined
+
             // Additional actions to perform after isLoggedIn changes
             if (isLoggedIn && loginData.email) {
                   // Fetch user data after login
                   fetchUserData(loginData.email);
                   changeView('Home');
+                  const storedIsLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+                  setLoggedIn(storedIsLoggedIn || false);
             }
       }, [isLoggedIn, loginData.email]); // Include loginData.email in the dependency array
 

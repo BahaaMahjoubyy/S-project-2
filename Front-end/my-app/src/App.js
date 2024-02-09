@@ -18,9 +18,11 @@ import './css/chat.css'
 function App() {
   const [view, setView] = useState('Home');
   const aboutRef = useRef(null);
+  const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn")) || false;
 
   const changeView = (newView) => {
     if (newView === 'About') {
+      // Scroll to the About section
       aboutRef.current.scrollIntoView({ behavior: 'smooth' });
     } else {
       setView(newView);
@@ -69,7 +71,7 @@ function App() {
         <h2 onClick={() => changeView('Chat')}>Chat</h2>
         <h2 onClick={() => changeView('About')}>About</h2>
         <h2 className="Login" onClick={() => changeView('Login')}> Login</h2>
-        <h2 className="Profile" onClick={() => changeView('Profile')}> Profile</h2>
+        {isLoggedIn && <h2 className="Profile" onClick={() => changeView('Profile')}> Profile</h2>}
         <img src={logo} alt="logo" />
       </nav>
 
