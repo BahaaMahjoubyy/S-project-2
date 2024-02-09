@@ -19,7 +19,7 @@ function App() {
   const [view, setView] = useState('Home');
   const aboutRef = useRef(null);
   const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn")) || false;
-
+  const currentUser = JSON.parse(localStorage.getItem("user")) || {}
   const changeView = (newView) => {
     if (newView === 'About') {
       // Scroll to the About section
@@ -67,9 +67,10 @@ function App() {
       <nav className='navbar'>
         {isLoggedIn ? (
           <>
-          <h2 className="Profile" onClick={() => changeView('Profile')}> Profile</h2>
+            <img className='login-img' src={currentUser.IMAGE} alt="" />
+            <h2 className="Login" onClick={() => changeView('Profile')}> Profile</h2>
             <h2 className="LogOut" onClick={() => {
-              localStorage.setItem("isLoggedIn", JSON.stringify(false)); 
+              localStorage.setItem("isLoggedIn", JSON.stringify(false));
               localStorage.clear();
               changeView('Login');
             }}>
