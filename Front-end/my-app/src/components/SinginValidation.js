@@ -1,7 +1,7 @@
 function validation(values) {
       // alert("")
       let error = {}
-     
+
       if (values.username === "") {
             error.username = "Username should not be empty"
       }
