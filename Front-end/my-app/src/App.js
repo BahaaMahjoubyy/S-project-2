@@ -12,6 +12,7 @@ import Profile from './components/Profile.jsx'
 import CommunityHighlight from './components/CommunityHighlight';
 import { ChatEngine } from 'react-chat-engine';
 import ChatFeed from './components/ChatFeed.jsx';
+import communityHighlights from './dummyData.json'
 import './css/chat.css'
 
 
@@ -20,13 +21,14 @@ function App() {
   const aboutRef = useRef(null);
   const [profileData, setProfileData] = useState(null);
  
-  const changeView = (newView ,userId) => {
+
+
+  const changeView = (newView, userId) => {
     if (newView === 'About') {
-      // Scroll to the About section
-      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-    }  else if (newView === 'Profile') {
+      aboutRef.current && aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else if (newView === 'Profile') {
       setProfileData(userId);
-    }else {
+    } else {
       setView(newView);
     }
   };
@@ -52,7 +54,7 @@ function App() {
       imageSrc: " https://res.cloudinary.com/ali22/image/upload/v1697654326/koss/cqzky0u6bsjiwoe4paci.jpg"
     },
     {
-      title: "Member Spotlight : 3ezdin Jaleli",
+      title: "Member Spotlight : Hiba Jaleli",
       description: "Meet our outstanding community member,Hiba Jaleli, who recently completed a challenging coding Javascript js project.",
       imageSrc: "https://res.cloudinary.com/ali22/image/upload/v1697652909/koss/hjysckkvszagjtrhonos.jpg"
     },
