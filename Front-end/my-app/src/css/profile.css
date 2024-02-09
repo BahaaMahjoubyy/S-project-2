@@ -1,0 +1,84 @@
+/* Add this CSS to your styles file or component */
+
+.custom-section {
+    background: linear-gradient(to bottom, rgb(29, 173, 140), rgb(68, 159, 116) , #1b1b1b);
+    height:100vh;
+    width:40%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+  }
+  
+  .custom-container {
+    padding-top: 5rem;
+    height: 100%;
+  }
+  
+  .custom-row {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .custom-role{
+    color: #000000;
+    margin-top: 3%;
+  }
+  .custom-card {
+    border-radius: 0.5rem;
+  }
+  
+  .custom-text-center {
+    text-align: center;
+  }
+  
+  .custom-text-white {
+    color: #000000;
+  }
+
+
+.custom-avatar {
+    margin-top: 2rem;
+    width: 230px;
+    border-radius: 50%; /* Make the image round */
+  }
+  
+  
+  .custom-username {
+    margin-top: 1rem;
+    font-size: 2.1rem;
+  }
+  
+  .custom-role {
+    font-size: 1.7rem;
+  }
+  
+  .custom-edit-icon {
+    margin-bottom: 5rem;
+  }
+  
+  .custom-card-body {
+    padding: 1rem;
+  }
+  
+  .custom-heading {
+    font-size: 1.7rem;
+    margin-bottom: 1%;
+    color:rgb(255, 255, 255)
+  }
+  
+  .custom-subheading {
+    font-size: 1.2rem;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  /* Social media icons */
+  .fa-lg {
+    font-size: 1.9rem;
+    margin-right: 0.5rem;
+    margin-top: 30%;
+    color: rgb(0, 255, 200);
+  }
+  
+  .custom-edit-icon{
+    font-size: larger;
+  }
