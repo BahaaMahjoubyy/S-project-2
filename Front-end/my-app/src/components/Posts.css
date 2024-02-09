@@ -1,86 +1,131 @@
-.posts-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.modal {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  background-color: #a12a2a;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  animation-name: animatetop;
-  animation-duration: 0.4s;
-}
-
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .post {
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  width: calc(50% - 20px); /* Set the width of each post */
+  margin: 0 auto; /* Center the posts horizontally */
+  margin-top: 20px;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post a {
+  display: block;
+  height: 100%;
   width: 100%;
-  max-width: 600px;
-  margin: 1rem auto;
+  text-decoration: none;
 }
 
-.post h1 {
+.post header {
+  background-color: #f5f5f5;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #ddd; /* Add border at the bottom of the header */
+}
+
+.post header img {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.post header .user_info {
+  flex: 1;
+}
+
+.post header .user_info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.post header .time {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.post main {
+  padding: 20px;
+}
+
+.post main h1 {
+  font-size: 1.5rem;
   margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.post img {
+.post main p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.post main img {
   max-width: 100%;
   height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px; /* Add border radius to images */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow to images */
 }
 
-.post button {
-  background-color: #02c077;
-  color: white;
-  padding: 8px 16px;
+.post main .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post main .actions button {
+  background-color: transparent;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  transition: color 0.3s ease-in-out;
+}
+
+.post main .actions button:hover {
+  color: #3b5998;
+}
+
+.post main .interactions {
+  display: flex;
+  align-items: center;
   margin-top: 1rem;
 }
 
-.post button:hover {
-  background-color: #45a049;
+.post main .interactions span {
+  font-size: 0.9rem;
+  color: #666;
+  margin-right: 1rem;
 }
 
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
+.post main .interactions svg {
+  height: 1.2rem;
+  width: 1.2rem;
+  fill: #666;
+  margin-right: 0.5rem;
+  transition: fill 0.3s ease-in-out;
+}
+
+.post main .interactions svg:hover {
+  fill: #3b5998;
+}
+
+@media (min-width: 768px) {
+  .post {
+    width: calc(50% - 20px);
   }
 }
