@@ -1,4 +1,8 @@
- [
+ [   {
+  "title": "Member Spotlight : Fawez Ferjaoui",
+  "description": "Meet our outstanding community member, Fawez Ferjaoui, who recently completed a challenging coding project.",
+  "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697643555/koss/a5xm9hniopm4lp8cg2i1.jpg"
+},
     {
       "title": "Member Spotlight : Jesser Gafsi",
       "description": "Meet our outstanding community member, Jesser Gafsi, who recently completed a challenging coding React js project.",
@@ -28,7 +32,7 @@
       "title": "Member Spotlight : Khalil Cherni",
       "description": "Meet our outstanding community member, Khalil Cherni, who recently completed a challenging coding Node.js project.",
       "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697643555/koss/a5xm9hniopm4lp8cg2i1.jpg"
-    }
+    } 
   ]
   
 
