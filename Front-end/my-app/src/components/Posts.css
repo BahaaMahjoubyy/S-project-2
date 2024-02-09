@@ -1,5 +1,5 @@
 .post {
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -9,7 +9,7 @@
   transition: transform 0.3s ease-in-out;
   width: calc(50% - 20px); /* Set the width of each post */
   margin: 0 auto; /* Center the posts horizontally */
-  margin-top:20px ;
+  margin-top: 20px;
 }
 
 .post:hover {
@@ -29,6 +29,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+  border-bottom: 1px solid #ddd; /* Add border at the bottom of the header */
 }
 
 .post header img {
@@ -61,9 +62,7 @@
 .post main h1 {
   font-size: 1.5rem;
   margin-top: 0;
-  margin-bottom: 30px;
-  margin-left: 39% ;
-  position: center;
+  margin-bottom: 20px;
   color: #333;
 }
 
@@ -78,6 +77,8 @@
   max-width: 100%;
   height: auto;
   margin-bottom: 20px;
+  border-radius: 8px; /* Add border radius to images */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow to images */
 }
 
 .post main .actions {
