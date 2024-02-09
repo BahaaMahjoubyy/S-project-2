@@ -52,7 +52,7 @@ function App() {
       imageSrc: " https://res.cloudinary.com/ali22/image/upload/v1697654326/koss/cqzky0u6bsjiwoe4paci.jpg"
     },
     {
-      title: "Member Spotlight : Hiba Jaleli",
+      title: "Member Spotlight : 3ezdin Jaleli",
       description: "Meet our outstanding community member,Hiba Jaleli, who recently completed a challenging coding Javascript js project.",
       imageSrc: "https://res.cloudinary.com/ali22/image/upload/v1697652909/koss/hjysckkvszagjtrhonos.jpg"
     },

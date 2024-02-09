@@ -9,7 +9,7 @@ const News = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedNews, setSelectedNews] = useState(null); // State to store the selected news item
   const [blurBackground, setBlurBackground] = useState(false); // State to toggle background blur
-
+  const [favorites, setFavorites] = useState([]);
   useEffect(() => {
     fetchAllNews();
   }, []);
@@ -66,7 +66,6 @@ const News = () => {
       setError('Error searching news');
     }
   };
-
   // Function to delete a news item
   const handleDeleteNews = async (id) => {
     try {
@@ -78,19 +77,25 @@ const News = () => {
       setError('Error deleting news');
     }
   };
-
+  const toggleFavorite = (id) => {
+    if (favorites.includes(id)) {
+      setFavorites(favorites.filter((favId) => favId !== id));
+    } else {
+      setFavorites([...favorites, id]);
+    }
+  };
   return (
     <div className={`news-containerr ${blurBackground ? 'blur-background' : ''}`}>
-      <h2 className="news-title-heading"> News:</h2>
-      <div className="search-barr">
+      <h2 className="news-title-heading"></h2>
+      <div className="searchh-barr">
         <input
-          className='search-inputt'
+          className='searchh-inputt'
           type="text"
           placeholder="Search by title"
           value={searchTerm}
           onChange={handleSearchTermChange}
         />
-        <button className='search-buttonn' onClick={handleSearchButtonClick}>Search</button>
+        <button className='searchh-buttonn' onClick={handleSearchButtonClick}>Search</button>
       </div>
       {error ? (
         <p>{error}</p>
@@ -101,6 +106,10 @@ const News = () => {
               {news.image && <img src={news.image} alt={news.title} className="news-image" />}
               <div className="news-details">
                 <p className="news-title">{news.title}</p>
+                <span className={`heart-icon ${favorites.includes(news.id) ? 'favorite' : ''}`} onClick={() => toggleFavorite(news.id)}>
+                  {favorites.includes(news.id) ? '❤️' : '🤍'}
+                </span>
+              
                 {/* <p className="news-description">{news.description}</p> */}
                 {/* Add more fields as needed */}
                 <button className="delete-button" onClick={() => handleDeleteNews(news.id)}>Delete 🚮</button>
