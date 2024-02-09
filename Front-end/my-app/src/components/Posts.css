@@ -1,86 +1,113 @@
-.posts-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.modal {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  background-color: #a12a2a;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  animation-name: animatetop;
-  animation-duration: 0.4s;
-}
-
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .post {
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 100%;
-  max-width: 600px;
-  margin: 1rem auto;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  width: calc(50% - 1rem); /* Set the width of each post */
+  margin: 0 auto; /* Center the posts horizontally */
 }
 
-.post h1 {
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+.post header {
+  background-color: #f5f5f5;
+  height: 100px; /* Adjust the height of the header */
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.post header img {
+  height: 80px; /* Adjust the height of the image */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure the image does not exceed container width */
+}
+
+.post main {
+  padding: 1rem;
+}
+
+.post main h1 {
+  font-size: 1.5rem;
   margin-top: 0;
 }
 
-.post img {
-  max-width: 100%;
-  height: auto;
+.post main p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
-.post button {
-  background-color: #02c077;
-  color: white;
-  padding: 8px 16px;
+.post main .media {
+  align-items: center;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.post main .media img {
+  border-radius: 50%;
+  height: 30px; /* Adjust the height of the media image */
+  width: 30px; /* Adjust the width of the media image */
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.post main .actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post main .actions button {
+  background-color: transparent;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+.post main .actions button:hover {
+  color: #3b5998;
+}
+
+.post main .interactions {
+  align-items: center;
+  display: flex;
   margin-top: 1rem;
 }
 
-.post button:hover {
-  background-color: #45a049;
+.post main .interactions span {
+  font-size: 0.8rem;
+  color: #888;
+  margin-right: 0.5rem;
 }
 
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
+.post main .interactions svg {
+  height: 1.2rem;
+  width: 1.2rem;
+  fill: #888;
+  margin-right: 0.5rem;
+}
+
+.post main .interactions svg:hover {
+  fill: #3b5998;
+}
+
+@media (min-width: 768px) {
+  .post {
+    width: calc(50% - 1rem);
   }
 }
