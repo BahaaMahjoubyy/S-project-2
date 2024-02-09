@@ -13,7 +13,7 @@ import CommunityHighlight from './components/CommunityHighlight';
 import { ChatEngine } from 'react-chat-engine';
 import ChatFeed from './components/ChatFeed.jsx';
 import './css/chat.css'
-
+import communityHighlights from './dummyData.json'
 
 function App() {
   const [view, setView] = useState('Home');
@@ -28,40 +28,7 @@ function App() {
       setView(newView);
     }
   };
-  const communityHighlights = [
-    {
-      title: "Member Spotlight : Jesser Gafsi",
-      description: "Meet our outstanding community member, Jesser Gafsi, who recently completed a challenging coding React js project.",
-      imageSrc: "https://res.cloudinary.com/ali22/image/upload/v1697643740/koss/fkouieiqatlc0iqeop1c.jpg"
-    },
-    {
-      title: "Member Spotlight : Iyes Cherni",
-      description: "Meet our outstanding community member,Iyes Cherni, who recently completed a challenging coding Paython project.",
-      imageSrc: "https://res.cloudinary.com/ali22/image/upload/v1697649807/koss/b6i8ewqnknolurcpzjae.jpg"
-    },
-    {
-      title: "Member Spotlight : Ghada Aasidi",
-      description: "Meet our outstanding community member,Ghada Aasidi, who recently completed a challenging coding next js project.",
-      imageSrc: "     https://res.cloudinary.com/ali22/image/upload/v1697643533/koss/zj8hwj6cnwen5cyxisny.jpg "
-    },
-    {
-      title: "Member Spotlight : Baha Mahjouby",
-      description: "Meet our outstanding community member,bahaMahjouby, who recently completed a challenging coding React js project.",
-      imageSrc: " https://res.cloudinary.com/ali22/image/upload/v1697654326/koss/cqzky0u6bsjiwoe4paci.jpg"
-    },
-    {
-      title: "Member Spotlight : Hiba Jaleli",
-      description: "Meet our outstanding community member,Hiba Jaleli, who recently completed a challenging coding Javascript js project.",
-      imageSrc: "https://res.cloudinary.com/ali22/image/upload/v1697652909/koss/hjysckkvszagjtrhonos.jpg"
-    },
 
-    {
-      title: "Member Spotlight : Khalil Cherni",
-      description: "Meet our outstanding community member,Khalil Cherni, who recently completed a challenging coding Node js project.",
-      imageSrc: " https://res.cloudinary.com/ali22/image/upload/v1697643555/koss/a5xm9hniopm4lp8cg2i1.jpg"
-    },
-
-  ];
   return (
     <div className="App">
       <nav className='navbar'>
