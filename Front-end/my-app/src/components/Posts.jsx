@@ -10,6 +10,7 @@ function Posts() {
     image: ""
   });
   const [showCreateForm, setShowCreateForm] = useState(false);
+  const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn")) || false;
 
   useEffect(() => {
     fetchPosts();
