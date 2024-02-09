@@ -1,39 +1,37 @@
- [   {
-  "title": "Member Spotlight : Fawez Ferjaoui",
-  "description": "Meet our outstanding community member, Fawez Ferjaoui, who recently completed a challenging coding project.",
-  "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1692289161/koss/ejuqanhwhdip5t14nxzm.webp"
-},
-    {
-      "title": "Member Spotlight : Jesser Gafsi",
-      "description": "Meet our outstanding community member, Jesser Gafsi, who recently completed a challenging coding React js project.",
-      "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697643740/koss/fkouieiqatlc0iqeop1c.jpg"
-    },
-    {
-      "title": "Member Spotlight : Iyes Cherni",
-      "description": "Meet our outstanding community member, Iyes Cherni, who recently completed a challenging coding Python project.",
-      "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697649807/koss/b6i8ewqnknolurcpzjae.jpg"
-    },
-    {
-      "title": "Member Spotlight : Ghada Aasidi",
-      "description": "Meet our outstanding community member, Ghada Aasidi, who recently completed a challenging coding Next.js project.",
-      "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697643533/koss/zj8hwj6cnwen5cyxisny.jpg"
-    },
-    {
-      "title": "Member Spotlight : Baha Mahjouby",
-      "description": "Meet our outstanding community member, Baha Mahjouby, who recently completed a challenging coding React.js project.",
-      "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697654326/koss/cqzky0u6bsjiwoe4paci.jpg"
-    },
-    {
-      "title": "Member Spotlight : Hiba Jaleli",
-      "description": "Meet our outstanding community member, Hiba Jaleli, who recently completed a challenging coding Javascript project.",
-      "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697652909/koss/hjysckkvszagjtrhonos.jpg"
-    },
-    {
-      "title": "Member Spotlight : Khalil Cherni",
-      "description": "Meet our outstanding community member, Khalil Cherni, who recently completed a challenging coding Node.js project.",
-      "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697643555/koss/a5xm9hniopm4lp8cg2i1.jpg"
-    } 
-  ]
-  
-
-  
+[
+  {
+    "title": "Member Spotlight : Fawez Ferjaoui",
+    "description": "Meet our outstanding community member, Fawez Ferjaoui, who recently completed a challenging coding project.",
+    "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1692289161/koss/ejuqanhwhdip5t14nxzm.webp"
+  },
+  {
+    "title": "Member Spotlight : Jesser Gafsi",
+    "description": "Meet our outstanding community member, Jesser Gafsi, who recently completed a challenging coding React js project.",
+    "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697643740/koss/fkouieiqatlc0iqeop1c.jpg"
+  },
+  {
+    "title": "Member Spotlight : Iyes Cherni",
+    "description": "Meet our outstanding community member, Iyes Cherni, who recently completed a challenging coding Python project.",
+    "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697649807/koss/b6i8ewqnknolurcpzjae.jpg"
+  },
+  {
+    "title": "Member Spotlight : Ghada Aasidi",
+    "description": "Meet our outstanding community member, Ghada Aasidi, who recently completed a challenging coding Next.js project.",
+    "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697643533/koss/zj8hwj6cnwen5cyxisny.jpg"
+  },
+  {
+    "title": "Member Spotlight : Baha Mahjouby",
+    "description": "Meet our outstanding community member, Baha Mahjouby, who recently completed a challenging coding React.js project.",
+    "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697654326/koss/cqzky0u6bsjiwoe4paci.jpg"
+  },
+  {
+    "title": "Member Spotlight : Hiba Jaleli",
+    "description": "Meet our outstanding community member, Hiba Jaleli, who recently completed a challenging coding Javascript project.",
+    "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697652909/koss/hjysckkvszagjtrhonos.jpg"
+  },
+  {
+    "title": "Member Spotlight : Khalil Cherni",
+    "description": "Meet our outstanding community member, Khalil Cherni, who recently completed a challenging coding Node.js project.",
+    "imageSrc": "https://res.cloudinary.com/ali22/image/upload/v1697643555/koss/a5xm9hniopm4lp8cg2i1.jpg"
+  }
+]

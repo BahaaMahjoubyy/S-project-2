@@ -14,8 +14,8 @@ const Profile = ({ isLoggedIn, userData }) => {
 
   return (
     <div>
-     <br></br>
-     <br></br>
+      <br></br>
+      <br></br>
 
       <section className="custom-section">
         <div className="custom-container py-5">
@@ -25,8 +25,8 @@ const Profile = ({ isLoggedIn, userData }) => {
                 <div className="custom-row g-0">
                   <div className="custom-col-md-4 custom-text-center custom-text-white"
                     style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
-                    <img src="https://cdn3.vectorstock.com/i/1000x1000/48/37/web-developer-design-vector-5884837.jpg"
-                      alt="Avatar" className="my-5 custom-avatar"  />
+                    <img src={currentUser.IMAGE}
+                      alt="Avatar" className="my-5 custom-avatar" />
                     <h5 className="custom-username">{currentUser.username}</h5>
                     <p className="custom-role">Web Developer</p>
                     <i className="far fa-edit mb-5 custom-edit-icon"></i>
