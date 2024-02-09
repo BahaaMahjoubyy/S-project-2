@@ -30,7 +30,6 @@ const Login = (props) => {
       const handleInput = (e) => {
             setLoginData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
       };
-
       const handleLogin = async (event) => {
             event.preventDefault();
             console.log('Log In button clicked');

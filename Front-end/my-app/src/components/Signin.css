@@ -1,14 +1,11 @@
 .signin-container {
       background-color: #2c3e50;
-      /* Dark background color */
-      border-radius: 10px;
-      /* Rounded corners */
-      padding: 20px;
-      /* Padding inside the form */
-      width: 300px;
-      /* Adjust the width as needed */
-      margin: 0 auto;
-      /* Center the form horizontally */
+      border-radius: 0px;
+      padding: 26px;
+      width: 303px;
+      margin: 273px;
+      position: relative;
+      left: 32%;
 }
 
 label {
@@ -55,6 +52,7 @@ button {
 
 .change-view-signin {
       background-color: #16a085;
-      /* Different color for the other button */
       color: #ecf0f1;
+      position: relative;
+      top: 8px;
 }
