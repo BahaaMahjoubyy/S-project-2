@@ -47,6 +47,23 @@ const update = (userName, chatData, callback) => {
     });
 };
 
+const create = (chatData, callback) => {
+    const { userName, msg } = chatData;
+    const query = 'INSERT INTO chat SET ?';
+
+    const values = {
+        userName: userName,
+        msg: msg,
+    };
+
+    connection.query(query, values, (err, result) => {
+        if (err) {
+            callback(err, null);
+        } else {
+            callback(null, result);
+        }
+    });
+};
 
 
 
@@ -54,5 +71,6 @@ module.exports={
     getAll,
     getOne,
     remove,
-    update
+    update,
+    create
 }

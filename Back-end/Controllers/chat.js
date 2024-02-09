@@ -43,9 +43,21 @@ const deleteChat = (req, res) => {
     });
   }
 
+  const createChat=(req,res)=>{
+   chat.create(req.body,(err,result)=>{
+        if(err){
+            res.status(500).send(err)
+        }else{
+            res.status(200).json(result)
+        }
+    })
+  }
+
+  
   module.exports={
     getAllChat,
     getOneChat,
     deleteChat ,
-    updateChat
+    updateChat,
+    createChat
   }
