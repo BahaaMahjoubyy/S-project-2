@@ -14,16 +14,17 @@ const Login = (props) => {
       //
       useEffect(() => {
             // This will run whenever isLoggedIn changes
-            console.log('isLoggedIn:', isLoggedIn);
-          
+            console.log('isLoggedIn-from-login', isLoggedIn);
+            const storedIsLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+            setLoggedIn(storedIsLoggedIn || false); // Set to false if stored value is null or undefined
             // Additional actions to perform after isLoggedIn changes
             if (isLoggedIn && loginData.email) {
-              // Fetch user data after login
-              fetchUserData(loginData.email);
-              changeView('Home');
+                  // Fetch user data after login
+                  fetchUserData(loginData.email);
+                  changeView('Home');
             }
-          }, [isLoggedIn, loginData.email]); // Include loginData.email in the dependency array
-          
+      }, [isLoggedIn, loginData.email]); // Include loginData.email in the dependency array
+
 
       const handleInput = (e) => {
             setLoginData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -32,22 +33,24 @@ const Login = (props) => {
       const handleLogin = async (event) => {
             event.preventDefault();
             console.log('Log In button clicked');
-      
+
             setErrors(Validation(loginData));
-      
+
             try {
                   const response = await axios.post('http://localhost:8080/user/login', loginData, {
                         headers: {
                               'Content-Type': 'application/json',
                         },
                   });
-      
+
                   const data = response.data;
-      
+
                   if (data.token) {
                         localStorage.setItem('token', data.token);
                         console.log('Token:', data.token);
                         setLoggedIn(true);
+                        localStorage.setItem("isLoggedIn", JSON.stringify(true)); // Set true directly
+                        console.log('isLoggedIn:local-storage', true); // Log true directly
                   }
             } catch (error) {
                   console.error('Error during Login:', error);
@@ -62,20 +65,19 @@ const Login = (props) => {
                               'Authorization': localStorage.getItem('token'), // Include the token in the headers
                         },
                   });
-      
+
                   const userData = response.data;
                   setUserData(userData);
+                  localStorage.setItem("user", JSON.stringify(userData));
                   console.log('userData:', userData);
-                  localStorage.setItem("user",JSON.stringify(userData));
 
-                 
+
             } catch (error) {
                   console.error('Error fetching user data:', error);
             }
       };
-      console.log('userData:', userData);
+      console.log('userData-from-the-end-of-login', userData);
       // Render the Profile component and pass isLoggedIn as a prop
-      console.log('isLoggedIn:', isLoggedIn);
       return (
             <div>
                   {isLoggedIn ? (

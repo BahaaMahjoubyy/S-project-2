@@ -21,7 +21,6 @@ function App() {
 
   const changeView = (newView) => {
     if (newView === 'About') {
-      // Scroll to the About section
       aboutRef.current.scrollIntoView({ behavior: 'smooth' });
     } else {
       setView(newView);
@@ -59,7 +58,7 @@ function App() {
       description: "Meet our outstanding community member,Khalil Cherni, who recently completed a challenging coding Node js project.",
       imageSrc: " https://res.cloudinary.com/ali22/image/upload/v1697643555/koss/a5xm9hniopm4lp8cg2i1.jpg"
     },
-    
+
   ];
   return (
     <div className="App">
@@ -91,7 +90,7 @@ function App() {
           <About ref={aboutRef} />
           <div className="community-highlights">
             <h2>Community Highlights</h2>
-           
+
             {communityHighlights.map((highlight, index) => (
               <CommunityHighlight key={index} highlight={highlight} />
             ))}
@@ -104,14 +103,14 @@ function App() {
       {view === 'SignIn' && <SignIn changeView={changeView} />}
       {view === 'Postes' && <Posts changeView={changeView} />}
       {view === 'Profile' && <Profile />}
-      {view === 'Chat' &&  <ChatEngine
-      height="100vh"
-      projectID="98d2c3a2-6a77-4ce0-98cb-d77186b67640"
-      userName="iyes"
-      userSecret="123123"
-      renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
-      onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
-    /> }
+      {view === 'Chat' && <ChatEngine
+        height="100vh"
+        projectID="98d2c3a2-6a77-4ce0-98cb-d77186b67640"
+        userName="iyes"
+        userSecret="123123"
+        renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+        onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
+      />}
 
       <Footer />
     </div>
