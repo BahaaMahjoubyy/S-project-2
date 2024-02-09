@@ -62,6 +62,7 @@ function Posts() {
         );
 
         imageUrl = responseCloudinary.data.secure_url;
+        console.log(responseCloudinary.data.secure_url);
       }
 
       const postData = {
@@ -69,7 +70,7 @@ function Posts() {
         content: formData.content,
         image: imageUrl
       };
-
+       console.log(imageUrl);
       if (isEditing && editingPost) {
         await axios.put(`http://localhost:8080/posts/update/${editingPost.id}`, postData);
         setIsEditing(false);
@@ -120,31 +121,31 @@ function Posts() {
 
 {posts.map((post) => (
   <div key={post.id} className="post">
-    <div className="app">
-      <header>
-        <a href="#">
-        </a>
-      </header>
-      <main>
-        {isEditing && editingPost && editingPost.id === post.id ? (
-          <form onSubmit={handleSubmit}>
-            <input type="text" name="title" value={formData.title} onChange={handleInputChange} placeholder="Enter title" />
-            <textarea name="content" value={formData.content} onChange={handleInputChange} placeholder="Enter content"></textarea>
-            <input type="file" accept="image/*" onChange={handleImageChange} />
-            <button type="submit">Update</button>
-            <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
-          </form>
-        ) : (
-          <>
-            <h1>{post.title}</h1>
-            <p>{post.content}</p>
-            <img src={post.image || 'placeholder-image-url.jpg'} alt="Post Image" />
+    <header>
+      <a href="#">
+      </a>
+    </header>
+    <main>
+      {isEditing && editingPost && editingPost.id === post.id ? (
+        <form onSubmit={handleSubmit}>
+          <input type="text" name="title" value={formData.title} onChange={handleInputChange} placeholder="Enter title" />
+          <textarea name="content" value={formData.content} onChange={handleInputChange} placeholder="Enter content"></textarea>
+          <input type="file" accept="image/*" onChange={handleImageChange} />
+          <button type="submit">Update</button>
+          <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
+        </form>
+      ) : (
+        <>
+          <h1>{post.title}</h1>
+          <p>{post.content}</p>
+          <img src={post.image || 'placeholder-image-url.jpg'} alt="Post Image" />
+          <div className="actions">
             <button onClick={() => handleDelete(post.id)}>Delete</button>
             <button onClick={() => handleEdit(post)}>Edit</button>
-          </>
-        )}
-      </main>
-    </div>
+          </div>
+        </>
+      )}
+    </main>
   </div>
 ))}
 
