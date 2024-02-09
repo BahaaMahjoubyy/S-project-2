@@ -65,14 +65,29 @@ function App() {
   return (
     <div className="App">
       <nav className='navbar'>
+        {isLoggedIn ? (
+          <>
+          <h2 className="Profile" onClick={() => changeView('Profile')}> Profile</h2>
+            <h2 className="LogOut" onClick={() => {
+              localStorage.setItem("isLoggedIn", JSON.stringify(false)); 
+              localStorage.clear();
+              changeView('Login');
+            }}>
+              LogOut
+            </h2>
+          </>
+        ) : (
+          <div className='login-div'>
+            <img className='login-img' src="https://res.cloudinary.com/db2yjlbsw/image/upload/v1707472250/b4rdekuvkytlte4kgnkv.png" alt="" />
+            <h2 className="Login" onClick={() => changeView('Login')}> Login</h2>
+          </div>
+        )}
         <h2 onClick={() => changeView('Home')}>Home</h2>
         <h2 onClick={() => changeView('CodesNews')}>Codes News</h2>
         <h2 onClick={() => changeView('Postes')}>Postes</h2>
         <h2 onClick={() => changeView('Chat')}>Chat</h2>
         <h2 onClick={() => changeView('About')}>About</h2>
-        <h2 className="Login" onClick={() => changeView('Login')}> Login</h2>
-        {isLoggedIn && <h2 className="Profile" onClick={() => changeView('Profile')}> Profile</h2>}
-        <img src={logo} alt="logo" />
+        <img className='logo' src={logo} alt="logo" />
       </nav>
 
       <hr></hr>
