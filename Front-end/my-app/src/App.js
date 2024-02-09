@@ -55,6 +55,7 @@ function App() {
         <h2 onClick={() => changeView('Postes')}>Postes</h2>
         <h2 onClick={() => changeView('Chat')}>Chat</h2>
         <h2 onClick={() => changeView('About')}>About</h2>
+        
         <img className='logo' src={logo} alt="logo" />
       </nav>
 
