@@ -18,7 +18,7 @@ function Footer() {
           <div className='con'>
             <h3>Contact Us</h3>
             <p>
-              Email: <a href="mailto:jessergafsi2@gmail.com">info@HackNest.com</a><br />
+              Email: <a href="mailto:jessergafsi2@gmail.com">info@HackNest.org</a><br />
               Phone: +16 29 263 839 
             </p>
           </div>
@@ -39,7 +39,7 @@ function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} HackNest. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} HackNest.org All rights reserved.</p>
         </div>
       </footer>
     );

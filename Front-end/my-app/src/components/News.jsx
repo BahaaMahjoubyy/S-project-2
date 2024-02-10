@@ -84,6 +84,12 @@ const News = () => {
       setFavorites([...favorites, id]);
     }
   };
+
+  // Function to handle listening to the radio
+  const listenToRadio = () => {
+    window.open('https://www.allradio.net/radio/92', '_blank');
+  };
+
   return (
     <div className={`news-containerr ${blurBackground ? 'blur-background' : ''}`}>
       <h2 className="news-title-heading"></h2>
@@ -109,7 +115,6 @@ const News = () => {
                 <span className={`heart-icon ${favorites.includes(news.id) ? 'favorite' : ''}`} onClick={() => toggleFavorite(news.id)}>
                   {favorites.includes(news.id) ? '❤️' : '🤍'}
                 </span>
-              
                 {/* <p className="news-description">{news.description}</p> */}
                 {/* Add more fields as needed */}
                 <button className="delete-button" onClick={() => handleDeleteNews(news.id)}>Delete 🚮</button>
@@ -133,8 +138,20 @@ const News = () => {
           <button className="close-button" onClick={handleCloseDetailedView}>Close 🚫</button>
         </div>
       )}
+
+      {/* Button to listen to the radio */}
+      <h2 className='radioun'>Chillout & Read</h2>
+      <button className="listen-to-radio-button" onClick={listenToRadio}>Listen to Radio</button>
+
+     <div>
+      <br />
+       {/* Button for more practice */}
+<button className="practice-button" onClick={() => window.open('https://www.codewars.com/', '_blank')}>More Practice</button>
+     </div>
+
     </div>
+    
   );
 };
-    
+
 export default News;
