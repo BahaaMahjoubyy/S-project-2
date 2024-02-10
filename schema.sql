@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `developer`.`user` (
   `IMAGE` VARCHAR(600) NOT NULL DEFAULT 'https://res.cloudinary.com/db2yjlbsw/image/upload/v1707472250/b4rdekuvkytlte4kgnkv.png',
   PRIMARY KEY (`id`, `username`, `email`, `password`, `IMAGE`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 55
+AUTO_INCREMENT = 57
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
