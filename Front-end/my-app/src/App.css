@@ -6,43 +6,54 @@ body {
 /*Navbar*/
 .navbar {
   background-color: transparent;
-  /* Deep gray background */
-  /* padding: 5px; */
+  padding: 5px; 
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
 
 }
 
 .navbar h2 {
   margin: 0;
-  font-size: 19px;
+  font-size: 15px;
   color: #000000;
-  margin-left: 50px;
-}
+  margin-right: 40px;
 
-.navbar h2 {
-  margin-right: 1%;
 }
-
 
 .navbar h2:hover {
-
   text-decoration: underline;
+}
+.navbar img {
+  width :201%
 }
 
 .Home {
   position: relative;
 }
 
+@keyframes imageAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .Home img {
   width: 70%;
-  height: 900px;
-  margin-left: 13%;
-  margin-top: 0%;
+  height: 600px;
+  margin-left: 15%;
+  margin-top: 1%;
+  animation: imageAnimation 3s infinite alternate; /* Adjust the duration and animation type as needed */
 }
+
 
 /* Home.css */
 
@@ -57,13 +68,13 @@ body {
 }
 
 .home-content h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
   font-family: 'Times New Roman', Times, serif;
 }
 
 .home-content p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-bottom: 30px;
   margin-top: 4%;
   color: #000000;
@@ -73,12 +84,12 @@ body {
   background-color: #1aaf6c;
   color: #000000;
   padding: 20px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 50%;
+  width: 40%;
 }
 
 .home-content button:hover {
@@ -92,6 +103,7 @@ body {
 .about {
   display: flex;
   justify-content: space-between;
+  margin-top: 8%;
 }
 
 .about img {
@@ -109,12 +121,11 @@ body {
   margin-top: 68%;
 }
 
-.logo {
-  width: 9%;
-  height: 50px;
-  margin-left: 50%;
+.navbar .logo {
+  width: 135px; 
+  height: 30px;
+  margin-left: auto; 
 }
-
 .chat-container {
   position: relative;
   background-color: rgb(1, 54, 36);
@@ -135,14 +146,18 @@ body {
   flex-wrap: nowrap;
 }
 
+.login-div {
+  display: flex;
+  align-items: center;
+  margin-right: auto; 
+}
+
 .login-img {
-  height: 34px;
-  position: relative;
-  left: 7px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
 }
 
 .Login {
-  width: 28px;
-  position: relative;
-  right: 28px;
+  cursor: pointer; 
 }

@@ -43,6 +43,7 @@ const SignIn = (props) => {
   };
 
   return (
+    <div className='sig'>
     <form className='signin-container' onSubmit={handleSignIn}>
       <label>
         <p>Username</p>
@@ -83,6 +84,7 @@ const SignIn = (props) => {
       <button type='submit' className='signin'>Sign In</button>
       <button className='change-view-signin'>Have An Account? Log In</button>
     </form>
+    </div>
   )
 }
 

@@ -29,34 +29,39 @@ function App() {
     }
   };
 
+
   return (
     <div className="App">
-      <nav className='navbar'>
-        {isLoggedIn ? (
-          <>
-            <img className='login-img' src={currentUser.IMAGE} alt="" />
-            <h2 className="Login" onClick={() => changeView('Profile')}>Profile</h2>
-            <h2 className="LogOut" onClick={() => {
-              localStorage.setItem("isLoggedIn", JSON.stringify(false));
-              localStorage.clear();
-              changeView('Login');
-            }}>
-              LogOut
-            </h2>
-          </>
-        ) : (
-          <div className='login-div'>
-            <img className='login-img' src="https://res.cloudinary.com/db2yjlbsw/image/upload/v1707472250/b4rdekuvkytlte4kgnkv.png" alt="" />
-            <h2 className="Login" onClick={() => changeView('Login')}>Login</h2>
-          </div>
-        )}
-        <h2 onClick={() => changeView('Home')}>Home</h2>
-        <h2 onClick={() => changeView('CodesNews')}>Codes News</h2>
-        <h2 onClick={() => changeView('Postes')}>Postes</h2>
-        <h2 onClick={() => changeView('Chat')}>Chat</h2>
-        <h2 onClick={() => changeView('About')}>About</h2>
-        <img className='logo' src={logo} alt="logo" />
-      </nav>
+     <nav className='navbar'>
+  {isLoggedIn ? (
+    <>
+      <div className='login-div'>
+        <img className='login-img' src={currentUser.IMAGE} alt="" />
+        <h2 className="Login" onClick={() => changeView('Profile')}> Profile</h2>
+        <h2 className="LogOut" onClick={() => {
+          localStorage.setItem("isLoggedIn", JSON.stringify(false));
+          localStorage.clear();
+          changeView('Login');
+        }}>
+          LogOut
+        </h2>
+      </div>
+    </>
+  ) : (
+    <div className='login-div'>
+      <img className='login-img' src="https://res.cloudinary.com/db2yjlbsw/image/upload/v1707472250/b4rdekuvkytlte4kgnkv.png" alt="" />
+      <h2 className="Login" onClick={() => changeView('Login')}> Login</h2>
+    </div>
+  )}
+  <h2 onClick={() => changeView('Home')}>Home</h2>
+  <h2 onClick={() => changeView('CodesNews')}>Codes News</h2>
+  <h2 onClick={() => changeView('Postes')}>Postes</h2>
+  <h2 onClick={() => changeView('Chat')}>Chat</h2>
+  <h2 onClick={() => changeView('About')}>About</h2>
+  
+  <img className='logo' src={logo} alt="logo" />
+</nav>
+
 
       <hr></hr>
 
@@ -74,7 +79,9 @@ function App() {
           </div>
           <About ref={aboutRef} />
           <div className="community-highlights">
+            <hr className='hr'></hr>
             <h2>Community Highlights</h2>
+            <hr></hr>
             {communityHighlights.map((highlight, index) => (
               <CommunityHighlight key={index} highlight={highlight} />
             ))}

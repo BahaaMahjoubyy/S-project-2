@@ -5,11 +5,11 @@
     height:100vh;
     width:40%;
     margin-left: 25%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
   }
   
   .custom-container {
-    padding-top: 5rem;
+    padding-top: 1rem;
     height: 100%;
   }
   
@@ -20,7 +20,7 @@
   }
   .custom-role{
     color: #000000;
-    margin-top: 3%;
+    
   }
   .custom-card {
     border-radius: 0.5rem;
@@ -36,46 +36,47 @@
 
 
 .custom-avatar {
-    margin-top: 2rem;
-    width: 230px;
+    margin-top: 1rem;
+    width: 170px;
     border-radius: 50%; /* Make the image round */
   }
   
   
   .custom-username {
-    margin-top: 1rem;
-    font-size: 2.1rem;
+    margin-top: 0.5rem;margin-bottom: 0.5rem;
+    font-size: 2rem;
   }
   
   .custom-role {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
   
-  .custom-edit-icon {
-    margin-bottom: 5rem;
-  }
+  /* .custom-edit-icon {
+    margin-bottom: 1rem;
+  } */
   
   .custom-card-body {
     padding: 1rem;
+    
   }
   
   .custom-heading {
-    font-size: 1.7rem;
+    font-size:1.2rem;
     margin-bottom: 1%;
     color:rgb(255, 255, 255)
   }
   
   .custom-subheading {
-    font-size: 1.2rem;
-    margin-top: 2%;
+    font-size: 1rem;
+    margin-top: 1%;
     margin-bottom: 2%;
   }
   
   /* Social media icons */
   .fa-lg {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     margin-right: 0.5rem;
-    margin-top: 30%;
+    margin-top: 32%;
     color: rgb(0, 255, 200);
   }
   
