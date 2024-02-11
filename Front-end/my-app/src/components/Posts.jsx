@@ -9,6 +9,9 @@ function Posts() {
     content: '',
     image: ''
   });
+  const [showCreateForm, setShowCreateForm] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingPost, setEditingPost] = useState(null);
 
   useEffect(() => {
     fetchPosts();

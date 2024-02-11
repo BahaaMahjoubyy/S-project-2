@@ -1,28 +1,28 @@
 import React, { useState, useRef } from 'react';
 import About from './components/About.jsx';
 import News from './components/News.jsx';
-import '../src/App.css';
-import home from '../src/images/home.png';
 import Login from './components/Login.jsx';
 import SignIn from './components/SignIn.jsx';
-import logo from '../src/images/logo.png';
 import Footer from './components/Footer.jsx';
 import Posts from './components/Posts.jsx';
 import Profile from './components/Profile.jsx';
 import CommunityHighlight from './components/CommunityHighlight';
 import { ChatEngine } from 'react-chat-engine';
 import ChatFeed from './components/ChatFeed.jsx';
-import './css/chat.css'
-import communityHighlights from './dummyData.json'
+import '../src/App.css';
+import home from '../src/images/home.png';
+import logo from '../src/images/logo.png';
+import './css/chat.css';
+import communityHighlights from './dummyData.json';
 
 function App() {
   const [view, setView] = useState('Home');
   const aboutRef = useRef(null);
   const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn")) || false;
-  const currentUser = JSON.parse(localStorage.getItem("user")) || {}
+  const currentUser = JSON.parse(localStorage.getItem("user")) || {};
+
   const changeView = (newView) => {
     if (newView === 'About') {
-      // Scroll to the About section
       aboutRef.current.scrollIntoView({ behavior: 'smooth' });
     } else {
       setView(newView);
