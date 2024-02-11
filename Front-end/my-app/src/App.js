@@ -29,6 +29,16 @@ function App() {
     }
   };
 
+
+    {
+      title: "Member Spotlight : Khalil Cherni",
+      description: "Meet our outstanding community member,Khalil Cherni, who recently completed a challenging coding Node js project.",
+      imageSrc: " https://res.cloudinary.com/ali22/image/upload/v1697643555/koss/a5xm9hniopm4lp8cg2i1.jpg"
+    },
+    
+
+  ];
+
   return (
     <div className="App">
       <nav className='navbar'>

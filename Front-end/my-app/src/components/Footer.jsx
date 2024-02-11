@@ -15,12 +15,14 @@ function Footer() {
             </div>
           </div>
           <div className="footer-section">
-            <div className='con'>
+          <div className='con'>
             <h3>Contact Us</h3>
-            <p>Email: info@HackNest.com</p>
-            <h4>Phone: +123 456 789</h4>
-            </div>
+            <p>
+              Email: <a href="mailto:jessergafsi2@gmail.com">info@HackNest.org</a><br />
+              Phone: +16 29 263 839 
+            </p>
           </div>
+        </div>
           <div className="footer-section">
             <h3>Connect with Us</h3>
             <div className="social-icons">
@@ -37,7 +39,7 @@ function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} HackNest. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} HackNest.org All rights reserved.</p>
         </div>
       </footer>
     );
