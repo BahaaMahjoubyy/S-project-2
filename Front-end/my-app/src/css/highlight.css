@@ -1,21 +1,23 @@
 /* CommunityHighlight.css */
 
 .community-highlight {
-    display: inline-block;
-    flex-direction: column; /* Updated to column layout */
-    width: 260px; /* Adjust the width as needed */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 9%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-left: 2.5%;
-    height:490px;
-  }
+  display: inline-block;
+  flex-direction: column; /* Updated to column layout */
+  width: 200px; /* Adjust the width as needed */
+  height: 366px; /* Adjust the height as needed */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 3%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 5%;
+  /* margin-top: 3%; */
+}
+
   
   .community-highlight img {
     width: 100%;
-    height: 250px; 
+    height: 170px; 
     object-fit: cover;
   }
   
@@ -24,9 +26,10 @@
   }
   
   .highlight-content h3 {
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-bottom: 28px;
     font-family: 'Times New Roman', Times, serif;
+    margin-top: 0.5%;
   }
     
   @keyframes moveText {
@@ -42,21 +45,25 @@
   }
   
   .community-highlights h2 {
-    font-size: 40px;
+    font-size: 35px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     animation: moveText 2s infinite; 
     color: rgb(0, 0, 0);
+
   }
   
   .highlight-content p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #555;
   }
   .community-highlights hr {
     width: 70%;
-    margin-bottom: 3%;
+ 
+   margin: 20px;
+   margin-left: 15%;
   }
+
   
   
   
