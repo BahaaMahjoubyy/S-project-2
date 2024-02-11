@@ -104,8 +104,9 @@ function Posts() {
       console.error('Error deleting post:', error);
     }
   };
-
+  console.log('hi')
   return (
+    
     <div className="posts-container">
       {!showCreateForm ? (
         <button onClick={() => setShowCreateForm(true)}>Create</button>
@@ -151,6 +152,7 @@ function Posts() {
 
     </div>
   );
+
 }
 
 export default Posts;
