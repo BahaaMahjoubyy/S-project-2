@@ -96,7 +96,7 @@
   .searchh-barr {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -106,31 +106,31 @@
 
 .searchh-inputt {
   flex-grow: 0.5;
-  padding: 13px;
-  font-size: 16px;
+  padding: 15px;
+  font-size: 18px;
   border: none;
   outline: none;
 }
 
 .searchh-buttonn {
-  padding: 12px 9px;
-  font-size: 16px;
-  background-color: #1aaf6c;
+  /* padding: 12px 9px; */
+  margin-top: 0.5%;
+  font-size: 40px;
+  /* background-color: #1aaf6c; */
   color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 25px;
+
+  /* cursor: pointer;
+  transition: background-color 0.3s ease; */
+  /* margin-bottom: 25px; */
   margin-left: 0.5%;
 }
 
-.search-buttonn:hover {
-  background-color: #dcdcdc;
-}
+
   
   /* Add these styles for the search bar within news-container */
   .news-containerr .searchh-barr {
-    margin-bottom: 20px; /* Adjusted margin for better spacing */
+    margin-top: 1.5%;
+    margin-bottom: 29px; /* Adjusted margin for better spacing */
   }
   
   .news-containerr .searchh-inputt {

@@ -1,36 +1,35 @@
+
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: 30px;
+}
+
 .post {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  /* border: 1px solid #e0e0e0; */
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  margin: 20px;
   overflow: hidden;
   position: relative;
   transition: transform 0.3s ease-in-out;
-  width: calc(50% - 20px); /* Set the width of each post */
-  margin: 0 auto; /* Center the posts horizontally */
-  margin-top: 20px;
+  width: calc(30% - 40px);
 }
 
 .post:hover {
   transform: translateY(-5px);
 }
 
-.post a {
-  display: block;
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
-}
-
-.post header {
+/* .post header {
   background-color: #f5f5f5;
   padding: 20px;
   overflow: hidden;
   position: relative;
   width: 100%;
-  border-bottom: 1px solid #ddd; /* Add border at the bottom of the header */
-}
+} */
 
 .post header img {
   border-radius: 50%;
@@ -57,34 +56,46 @@
 
 .post main {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .post main h1 {
   font-size: 1.5rem;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Add margin between h1 and p */
   color: #333;
+}
+
+.post main div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .post main p {
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 1rem;
+  margin-bottom: 10px; /* Add margin between p and img */
   color: #666;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 .post main img {
-  max-width: 100%;
+  max-width: 30%;
   height: auto;
-  margin-bottom: 20px;
-  border-radius: 8px; /* Add border radius to images */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow to images */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 10px; /* Add spacing between img and p */
 }
 
 .post main .actions {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
+  margin-top: 7%;
 }
 
 .post main .actions button {
@@ -92,8 +103,11 @@
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  color: #666;
+  color: #08ae5e;
   transition: color 0.3s ease-in-out;
+  margin-top: 90%;
+
+  
 }
 
 .post main .actions button:hover {
@@ -126,6 +140,65 @@
 
 @media (min-width: 768px) {
   .post {
-    width: calc(50% - 20px);
+    width: calc(80% - 5px);
   }
 }
+
+.write-button {
+  margin-left: 90%;
+}
+
+.write-button button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #079c54;
+  transition: color 0.3s ease-in-out;
+}
+
+.write-button button:hover {
+  color: #000000;
+}
+
+/* Add the following styles to create a modal-like appearance for the form */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal input,
+.modal textarea,
+.modal button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.modal button {
+  background-color:#079c54;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.modal button.cancel {
+  background-color: #ccc;
+}
+
