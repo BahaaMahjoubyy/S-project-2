@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 import './News.css'; // Import the CSS file
 
 const News = () => {

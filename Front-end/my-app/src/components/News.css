@@ -1,14 +1,14 @@
-/* News.css */
+
 
 .news-containerr {
-  max-width: auto;
+  max-width: 100%;
   margin: 0 auto;
-
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(115deg, #000000 0%, #018752 50%, #e9eae9 100%);
   background-size: 200% 200%;
   animation: gradientAnimation 8s ease infinite;
-
-  
 }
 @keyframes gradientAnimation {
   0% {
@@ -24,6 +24,7 @@
   .news-cards-container {
     display: flex;
     flex-wrap: wrap;
+    
   }
   
   .news-card {
@@ -33,9 +34,10 @@
     margin: 40px;
     padding: 40px;
     width: 210px;
-    height: 310px; /* Increased card height */
+    height: 150px; /* Increased card height */
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
+    margin-left: 1%;
   }
   
   .news-card::before {
@@ -55,6 +57,8 @@
   }
   
   .news-image {
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: auto;
     border-radius: 12px;
@@ -84,7 +88,7 @@
   }
   
   .news-title {
-    font-size: 1.4rem; /* Increased font size for better visibility */
+    font-size: 1.2rem; /* Increased font size for better visibility */
     font-weight: bold;
     margin-bottom: 8px; /* Increased margin for better spacing */
   }
@@ -94,12 +98,11 @@
     margin-top: 8px;
   }
   .searchh-barr {
+    
   display: flex;
   align-items: center;
   margin-bottom: 24px;
-  background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   padding-left: 33rem;
 }
@@ -110,6 +113,7 @@
   font-size: 18px;
   border: none;
   outline: none;
+  background-color: #ddd;
 }
 
 .searchh-buttonn {

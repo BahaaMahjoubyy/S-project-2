@@ -66,6 +66,7 @@
   margin-top: 0;
   margin-bottom: 10px; /* Add margin between h1 and p */
   color: #333;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .post main div {
@@ -152,9 +153,10 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: #079c54;
   transition: color 0.3s ease-in-out;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .write-button button:hover {
@@ -181,6 +183,8 @@
   width: 80%;
   max-width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-left: 35%;
+
 }
 
 .modal input,
@@ -199,6 +203,12 @@
 }
 
 .modal button.cancel {
-  background-color: #ccc;
+  background-color: #000000;
 }
 
+.post button {
+  background-color: #079c54;
+  margin-bottom: 1%;
+  font-size: 19px;
+  font-family: 'Times New Roman', Times, serif;
+}

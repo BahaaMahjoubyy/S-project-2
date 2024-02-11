@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./Posts.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import {faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 
 
 function Posts() {
@@ -116,7 +116,7 @@ function Posts() {
     
     <div className="write-button">
     <button onClick={() => setShowCreateForm(true)}>
-      <FontAwesomeIcon icon={faPencilAlt} /> Write
+    <FontAwesomeIcon icon={faPenToSquare} /> Write
     </button>
   </div>
   
