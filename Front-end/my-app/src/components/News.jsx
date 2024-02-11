@@ -101,7 +101,7 @@ const News = () => {
           value={searchTerm}
           onChange={handleSearchTermChange}
         />
-        <button className='searchh-buttonn' onClick={handleSearchButtonClick}>Search</button>
+        <h1 className='searchh-buttonn' onClick={handleSearchButtonClick}>🔍</h1>
       </div>
       {error ? (
         <p>{error}</p>
