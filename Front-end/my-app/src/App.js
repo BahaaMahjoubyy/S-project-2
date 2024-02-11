@@ -14,6 +14,14 @@ import home from '../src/images/home.png';
 import logo from '../src/images/logo.png';
 import './css/chat.css';
 import communityHighlights from './dummyData.json';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faHouseChimney} from '@fortawesome/free-solid-svg-icons';
+import {faBell} from '@fortawesome/free-solid-svg-icons';
+import {faNewspaper} from '@fortawesome/free-solid-svg-icons';
+import {faPeopleArrows} from '@fortawesome/free-solid-svg-icons';
+import {faAddressCard} from '@fortawesome/free-solid-svg-icons';
+
+
 
 function App() {
   const [view, setView] = useState('Home');
@@ -53,11 +61,17 @@ function App() {
       <h2 className="Login" onClick={() => changeView('Login')}> Login</h2>
     </div>
   )}
-  <h2 onClick={() => changeView('Home')}>Home</h2>
-  <h2 onClick={() => changeView('CodesNews')}>Codes News</h2>
-  <h2 onClick={() => changeView('Postes')}>Postes</h2>
-  <h2 onClick={() => changeView('Chat')}>Chat</h2>
-  <h2 onClick={() => changeView('About')}>About</h2>
+ <h2 onClick={() => changeView('Home')}>
+  <FontAwesomeIcon icon={faHouseChimney} style={{ marginRight: '5px' }} />
+  Home
+</h2>
+<h2 onClick={() => changeView('CodesNews')}>
+  <FontAwesomeIcon icon={faBell} style={{ marginRight: '5px' }} />
+  Codes News
+</h2>
+  <h2 onClick={() => changeView('Postes')}><FontAwesomeIcon icon={faNewspaper}  style={{ marginRight: '5px' }} />Postes</h2>
+  <h2 onClick={() => changeView('Chat')}><FontAwesomeIcon icon={faPeopleArrows}   style={{ marginRight: '5px' }} />Chat</h2>
+  <h2 onClick={() => changeView('About')}><FontAwesomeIcon icon={faAddressCard}   style={{ marginRight: '5px' }} />About</h2>
   
   <img className='logo' src={logo} alt="logo" />
 </nav>
