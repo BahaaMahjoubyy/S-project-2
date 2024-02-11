@@ -96,7 +96,7 @@ function Posts() {
     setIsEditing(true);
     setEditingPost(post);
     setFormData({ title: post.title, content: post.content, image: post.image });
-    setShowCreateForm(true);
+    // setShowCreateForm(true);
   };
 
   const handleDelete = async (postId) => {
