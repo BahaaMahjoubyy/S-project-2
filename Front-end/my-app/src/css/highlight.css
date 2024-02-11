@@ -29,17 +29,33 @@
     font-family: 'Times New Roman', Times, serif;
   }
     
+  @keyframes moveText {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
   .community-highlights h2 {
     font-size: 40px;
-    margin-bottom: 60px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
-    margin-bottom: 3%;
-
+    animation: moveText 2s infinite; 
+    color: rgb(0, 0, 0);
   }
+  
   .highlight-content p {
     font-size: 1rem;
     color: #555;
+  }
+  .community-highlights hr {
+    width: 70%;
+    margin-bottom: 3%;
   }
   
   

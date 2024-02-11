@@ -34,12 +34,26 @@ body {
   position: relative;
 }
 
+@keyframes imageAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .Home img {
   width: 70%;
   height: 600px;
   margin-left: 15%;
-  margin-top: 0%;
+  margin-top: 1%;
+  animation: imageAnimation 3s infinite alternate; /* Adjust the duration and animation type as needed */
 }
+
 
 /* Home.css */
 
@@ -89,6 +103,7 @@ body {
 .about {
   display: flex;
   justify-content: space-between;
+  margin-top: 8%;
 }
 
 .about img {

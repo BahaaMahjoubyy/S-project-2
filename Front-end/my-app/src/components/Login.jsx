@@ -79,7 +79,7 @@ const Login = (props) => {
       console.log('userData-from-the-end-of-login', userData);
       // Render the Profile component and pass isLoggedIn as a prop
       return (
-            <div>
+            <div className='log'>
                   {isLoggedIn ? (
                         <Profile isLoggedIn={isLoggedIn} userData={userData} />
                   ) : (

@@ -32,8 +32,8 @@
     border-radius: 13px;
     margin: 40px;
     padding: 40px;
-    width: 320px;
-    height: 400px; /* Increased card height */
+    width: 210px;
+    height: 310px; /* Increased card height */
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
   }
@@ -115,12 +115,13 @@
 .searchh-buttonn {
   padding: 12px 9px;
   font-size: 16px;
-  background-color: #4caf50;
+  background-color: #1aaf6c;
   color: #fff;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-bottom: 25px;
+  margin-left: 0.5%;
 }
 
 .search-buttonn:hover {
@@ -227,7 +228,9 @@
   color: red; /* Change color to red when it's a favorite */
 }
 .listen-to-radio-button {
-  background-color: #4CAF50; /* Green */
+  width :60%;
+  margin-left: 20%;
+  background-color:  #060606; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -235,12 +238,13 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  /* margin: 4px 2px; */
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 12px;
   border: 2px solid #4CAF50;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .listen-to-radio-button:hover {
@@ -250,17 +254,20 @@
 
 .listen-to-radio-button:active, .listen-to-radio-button:focus {
   outline: none;
-  background-color: #45a049;
+  background-color: #85c096;
   box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2), 0 8px 24px 0 rgba(0,0,0,0.19);
 }
 .radioun {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 32px;
   font-weight: bold;
+  width: 80%;
+  margin-left: 10%;
   color: #fff;
-  background-color: #4CAF50;
+  background-color:  #000000;
   padding: 20px;
   border-radius: 10px;
+  border: 2px solid #4CAF50;
   text-align: center;
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -268,8 +275,10 @@
 }
 
 .radioun:hover {
-  background-color: #45a049;
+
   transition: background-color 0.3s ease-in-out;
+  background-color: white;
+  color: #4CAF50;
 }
 
 .radioun::before {
@@ -282,7 +291,9 @@
   margin-right: 10px;
 }
 .practice-button{
-  background-color: #ff4d4d;
+  width: 90%;
+  margin-left: 5%;
+  background-color: #d13a37;
     color: #16171b;
     text-align: center;
     letter-spacing: 1.04em;
@@ -292,4 +303,5 @@
     font-weight: 1000;
     transition: opacity 0.2s;
     font-size: large;
+    margin-bottom: 2%;
 }
